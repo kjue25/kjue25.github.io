@@ -62,3 +62,15 @@ function showParentInstructions() {
 window.onload = function(){
 	start();
 };
+
+
+
+
+
+
+
+let schools = [school1, school2, school3];
+let school1 = new Map([['school type', 'public school'], ['demographics', '...']]);
+let school2 = new Map([]);
+let school3 = new Map([]);
+
