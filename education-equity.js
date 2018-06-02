@@ -1,4 +1,12 @@
-let curr_index = 0;
+/****
+ * Equity, I Choose You
+ * Documentation: https://docs.google.com/document/d/1yyedx9eUpFpxBtxoGwSyUS3A4SADYg30l48Vd3eLO7M/edit
+ * (please ignore the terrible style...WIP)
+ **/
+
+let INSTRUCTIONS = ["For the following questions, choose the option which best describes your beliefs and values.",
+					"Now, imagine you are a parent with a child who is about to start school for the first time.",
+					"You are trying to choose a school for your child and have a few options:"];
 let VALUE_STATEMENTS = [["I believe all students in a classroom should receive equal attention from the teacher.", "I believe students who are struggling should receive more attention from the teacher."],
 						["I believe schools should have different classes for advanced and underperforming students.", "I believe that students should be in heterogeneous classrooms that cater to all abilities."],
 						["I believe quantitative metrics like test scores and college admission rates are better measures of school quality than environmental factors.", "I believe environmental factors like racial and ethnic diversity are better measures of school quality than quantitative metrics like test scores."], 
@@ -14,10 +22,15 @@ let SCORES = new Map([[0,[[-1,0,0,0,0,0], [1,0,0,0,0,0]]],
 					[4, [[0,0,0,1,0,0],[0,0,1,-1,0,0]]],
 					[5, [[0,0,0,0,0,-1],[0,0,0,0,0,1]]],
 					[6, [[0,0,0,1,0,0],[0,0,0,0,0,0]]],
-					[7, [[0,0,1,0,0,0],[0,0,0,0,0,0]]]]);
-let value_choices = [];   //each index represents value choice; 0=left value, 1=right value
-let user_scores = [0,0,0,0,0,0];
+					[7, [[0,0,1,0,0,0],[0,0,0,0,0,0]]]]); //Value statement index to score effects (a tuple of [left score array, right score array])
 
+let curr_index = 0;
+let value_choices = [];   //each index represents value choice; 0=left value, 1=right value
+let user_scores = [0,0,0,0,0,0]; // corresponding index to score category: [0: support equity, 1: opportunity equity, 2: testing,
+								 //											3: diversity, 4: resource equity, 5: discipline]
+
+// Called each time the user selects a value statement
+// Increments 
 function next(clicked_panel) {
 	value_choices[curr_index] = clicked_panel;
 	for (let i = 0; i < 6; i++) {
@@ -41,22 +54,39 @@ function changePanels() {
 
 function start() {
 	console.log("STARTING");
-	$('#instructions').text("For the following questions, choose the option which best describes your beliefs and values.");
+	$('#instructions').text(INSTRUCTIONS[0]);
 	$('#value_statements').hide();
+	$('#parent_instructions_button').hide();
+	$('#display_schools_button').hide();
 }
 
+
+// lol need to fix all the button names/make these methods clearer...
+// there's probably a better way to do this than three separate buttons
 function showNextInstructions() {
 	$('#instructions').hide();
-	$('#instructions_button').hide();
+	$('#intro_instructions_button').hide();
 	$('#value_statements').show();
 }
 
 function showParentInstructions() {
 	$('#instructions').show();
-	$('#instructions_button').show();
+	$('#parent_instructions_button').show();
 	$('#value_statements').hide();
-	$('#instructions').text("Now, imagine you are a parent with a child who is about to start school for the first time.");
+	$('#instructions').text(INSTRUCTIONS[1]);
 	console.log(user_scores);
+}
+
+function showSchoolInstructions() {
+	$('#instructions').text(INSTRUCTIONS[2]);
+	$('#parent_instructions_button').hide();
+	$('#display_schools_button').show();
+}
+
+function displaySchools() {
+	$('#instructions').hide();
+	$('#display_schools_button').hide();
+	// Add code to display schools based on school maps
 }
 
 window.onload = function(){
