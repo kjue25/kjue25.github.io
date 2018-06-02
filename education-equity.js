@@ -7,4 +7,11 @@ function next(clicked_panel) {
 		user_scores[i] += SCORES[curr_index][clicked_panel][i];
 	}
 	console.log(clicked_panel);
+	changePanels();
+}
+
+function changePanels() {
+	curr_index++;
+	$('#left_panel').text(VALUE_STATEMENTS[curr_index][0]);
+	$('#right_panel').text(VALUE_STATEMENTS[curr_index][1]);
 }
