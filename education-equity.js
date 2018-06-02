@@ -87,13 +87,17 @@ function displaySchools() {
 	$('#instructions').hide();
 	$('#display_schools_button').hide();
 	$("#schools").load("schools-display.html");
+
 	// Add code to display schools based on school maps
+}
+
+function insertSchoolData() {
+	console.log("SCHOOL DATA");
 }
 
 window.onload = function(){
 	start();
 };
-
 
 
 
