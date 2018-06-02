@@ -16,14 +16,16 @@ let SCORES = new Map([[0,[[-1,0,0,0,0,0], [1,0,0,0,0,0]]],
 					[6, [[0,0,0,1,0,0],[0,0,0,0,0,0]]],
 					[7, [[0,0,1,0,0,0],[0,0,0,0,0,0]]]]);
 let value_choices = [];   //each index represents value choice; 0=left value, 1=right value
-let user_scores = [];
+let user_scores = [0,0,0,0,0,0];
 
 function next(clicked_panel) {
 	value_choices[curr_index] = clicked_panel;
 	for (let i = 0; i < 6; i++) {
 		user_scores[i] += SCORES.get(curr_index)[clicked_panel][i];
+		console.log(SCORES.get(curr_index)[clicked_panel][i]);
 	}
-	console.log(clicked_panel);
+	console.log(user_scores);
+
 	changePanels();
 }
 
@@ -33,21 +35,30 @@ function changePanels() {
 		$('#left_panel').text(VALUE_STATEMENTS[curr_index][0]);
 		$('#right_panel').text(VALUE_STATEMENTS[curr_index][1]);
 	} else {
-		instructions.showParentInstructions();
+		showParentInstructions();
 	}
 }
 
-function Instructions() {
-	
-}
-
-Instructions.prototype.start = function() {
-	$('#instructions').text("For the following questions, choose the option which best describes your beliefs and values.");
+function start() {
 	console.log("STARTING");
+	$('#instructions').text("For the following questions, choose the option which best describes your beliefs and values.");
 	$('#value_statements').hide();
 }
 
-Instructions.prototype.showParentInstructions = function() {
-	$obj = $(obj);
-	$obj.text("Now, imagine you are a parent with a child who is about to start school for the first time.");
+function showNextInstructions() {
+	$('#instructions').hide();
+	$('#instructions_button').hide();
+	$('#value_statements').show();
 }
+
+function showParentInstructions() {
+	$('#instructions').show();
+	$('#instructions_button').show();
+	$('#value_statements').hide();
+	$('#instructions').text("Now, imagine you are a parent with a child who is about to start school for the first time.");
+	console.log(user_scores);
+}
+
+window.onload = function(){
+	start();
+};
