@@ -25,4 +25,12 @@ function next(clicked_panel) {
 	}
 	console.log(clicked_panel);
 	curr_index++;
+	changePanels();
+
+}
+
+function changePanels() {
+	curr_index++;
+	$('#left_panel').text(VALUE_STATEMENTS[curr_index][0]);
+	$('#right_panel').text(VALUE_STATEMENTS[curr_index][1]);
 }
