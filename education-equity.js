@@ -19,7 +19,7 @@ let value_choices = [];   //each index represents value choice; 0=left value, 1=
 let user_scores = [];
 
 function next(clicked_panel) {
-	user_choices[curr_index] = clicked_panel;
+	value_choices[curr_index] = clicked_panel;
 	for (let i = 0; i < 6; i++) {
 		user_scores[i] += SCORES[curr_index][clicked_panel][i];
 	}
