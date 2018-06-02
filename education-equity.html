@@ -11,15 +11,21 @@
 	<link rel="stylesheet" href="education-equity.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="education-equity.js"></script>
- 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
 </head>
 
 <body>
-	<span id="left_panel" class="cell col-sm-5" onclick="next('left');">
-	</span>
-	<span id="right_panel" class="cell col-sm-5" onclick="next('right');">
-	</span>
+	<div id="instructions"></div>
+	<div id="value_statements">
+		<span id="left_panel" class="cell col-sm-5" onclick="next(0);">
+		</span>
+		<span id="right_panel" class="cell col-sm-5" onclick="next(1);">
+		</span>
+	</div>
 </body>
+
+<script type="text/javascript" src="education-equity.js">
+	let instructions = new Instructions();
+	instructions.start();
+</script>
 </html>
