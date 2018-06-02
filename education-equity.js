@@ -86,6 +86,7 @@ function showSchoolInstructions() {
 function displaySchools() {
 	$('#instructions').hide();
 	$('#display_schools_button').hide();
+	$("#schools").load("schools-display.html");
 	// Add code to display schools based on school maps
 }
 
@@ -97,10 +98,7 @@ window.onload = function(){
 
 
 
-
-
-let schools = [school1, school2, school3];
 let school1 = new Map([['school type', 'public school'], ['demographics', '...']]);
 let school2 = new Map([]);
 let school3 = new Map([]);
-
+let schools = [school1, school2, school3];
