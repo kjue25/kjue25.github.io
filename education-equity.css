@@ -1,16 +1,18 @@
-table {
+html, body {
+	height: 100%;
+}
+
+.cell {
 	text-align: center;
 	font-family: "georgia";
 	font-size: 40px;
-}
-td {
 	border: 10px solid #ffc060;
 	background: #ffc078;
 	opacity: 0.5;
 	overflow: hidden;
-	width: 150px;
-	height: 150px;
 	border-radius: 10px;
+	height: 95%;
+	margin: 10px;
 	text-align: center;
 	vertical-align: center;
 	text-align: center;
