@@ -136,9 +136,9 @@ function insertSchoolData() {
 // Updates html from schools-display.html for each school property
 function generateSchoolPropHtml(prop, data) {
 	data = data.replace("School Name", prop);
-	data = data.replace("School1", SCHOOL1.get(prop));
-	data = data.replace("School2", SCHOOL2.get(prop));
-	data = data.replace("School3", SCHOOL3.get(prop));
+	data = data.replace("Washington Elementary", SCHOOL1.get(prop));
+	data = data.replace("Lincoln Elementary", SCHOOL2.get(prop));
+	data = data.replace("Stony Brook Elementary", SCHOOL3.get(prop));
 	return data;
 }
 
