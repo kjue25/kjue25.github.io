@@ -59,9 +59,9 @@ let SCHOOLS = [SCHOOL1, SCHOOL2, SCHOOL3];
 //Map of schools to arrays of flags which represent potential value mismatches for the category represented by 
 //the CATEGORY_TO_INDEX_MAP above. If flag is up for the user-selected school and user_score for same index is >0, 
 //a value/choice mismatch has occured
-let SCHOOL_EQUITY_CATEGORIES = new Map([[SCHOOL1, [1,1,0,0,1,0]],
-									  [SCHOOL2, [0,1,0,1,0,1]],
-									  [SCHOOL3, [0,0,1,1,1,1]]]); // 1s represent value categories that will misalign the user_score is > 0 for that category
+let SCHOOL_EQUITY_CATEGORIES = new Map([[SCHOOL1, [1,1,0,1,0,0]],
+									    [SCHOOL2, [0,1,0,0,1,1]],
+									    [SCHOOL3, [0,0,1,1,1,1]]]); // 1s represent value categories that will misalign the user_score is > 0 for that category
 
 //School properties which correspond to school property indices.
 let SCHOOL_PROPERTY_TO_INDEX_MAP = new Map([[0, 'school type'],
@@ -74,9 +74,13 @@ let SCHOOL_PROPERTY_TO_INDEX_MAP = new Map([[0, 'school type'],
 
 //Value category keys that map to arrays of school property flags defined by the SCHOOL_PROPERTY_TO_INDEX_MAP above. If property is flagged, 
 //it indicates that the property relates to the equity category and should be flagged if there is a school choice/equity category mismatch.
-let CATEGORY_TO_SCHOOL_PROPERTIES =new  Map([['support equity', [0,0,0,0,0,1,1]],
+
+let CATEGORY_TO_SCHOOL_PROPERTIES = new  Map([['support equity', [0,0,0,0,0,1,1]],
 											 ['opportunity equity', [0,0,0,0,1,0,1]],
 											 ['testing', [0,0,0,1,0,0,0]],
 											 ['resource equity', [1,0,0,0,0,0,0]],
 											 ['diversity', [0,1,0,0,0,0,0,0]],
 											 ['discipline', [0,0,1,0,0,0,0]]]);
+
+let NUM_STATEMENT_PANELS = 8;
+let NUM_VALUE_CATEGORIES = 6;
