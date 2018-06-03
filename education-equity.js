@@ -35,10 +35,7 @@ function next(clicked_panel) {
 	value_choices[curr_index] = clicked_panel;
 	for (let i = 0; i < 6; i++) {
 		user_scores[i] += SCORES.get(curr_index)[clicked_panel][i];
-		console.log(SCORES.get(curr_index)[clicked_panel][i]);
 	}
-	console.log(user_scores);
-
 	changePanels();
 }
 
@@ -74,7 +71,6 @@ function showParentInstructions() {
 	$('#parent_instructions_button').show();
 	$('#value_statements').hide();
 	$('#instructions').text(INSTRUCTIONS[1]);
-	console.log(user_scores);
 }
 
 function showSchoolInstructions() {
@@ -97,7 +93,6 @@ function insertSchoolData() {
 	school1.forEach(function(value, key, map) {
 		$.get("schools-display.html", function(data){
 			let rowHtml = generateSchoolPropHtml(key, data);
-			console.log(rowHtml);
 			$("#schools").append(rowHtml);
 		});
 	});
@@ -115,7 +110,6 @@ function generateSchoolPropHtml(prop, data) {
 window.onload = function(){
 	start();
 };
-
 
 
 
