@@ -94,6 +94,11 @@ function displaySchools() {
 
 function insertSchoolData() {
 	console.log("SCHOOL DATA");
+	school1.forEach(function() {
+		$.get("schools-display.html", function(data){
+			$("#schools").html($("#schools").html + data);
+		});
+	});
 }
 
 window.onload = function(){
