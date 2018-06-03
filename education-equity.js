@@ -115,7 +115,9 @@ function chooseSchool(num) {
 	
 	// Just hide the school columns you didn't choose
 	for (let i = 0; i < SCHOOLS.length; i++) {
-		$('.school' + (num+1)).hide();
+		if (i !== num+1) {
+			$('.school' + i).hide();
+		}
 	}
 
 	// Generates summary based on selected school
