@@ -28,6 +28,31 @@ let curr_index = 0;
 let value_choices = [];   //each index represents value choice; 0=left value, 1=right value
 let user_scores = [0,0,0,0,0,0]; // corresponding index to score category: [0: support equity, 1: opportunity equity, 2: testing,
 								 //											3: diversity, 4: resource equity, 5: discipline]
+// School maps
+// TODO: Move to top of file and make const
+let SCHOOL1 = new Map([['school type', 'public school'], 
+						['demographics', 'Majority Asian and white students, with 10% black and Latinx students'],
+						['discipline', 'Students cannot be suspended; instead, they are required to attend counseling services.'],
+						['academic', 'Below average test scores'],
+						['tracking', 'After 1st grade, students are separated into tracks based on grades; ability to switch tracks each year given standardized test performance.'],
+						['support', 'Provides bare minimum for legally required support services, such as counseling; however, it is reserved for those who need it the most, and may not be of the best quality.'],
+						['class size', '20-25 students / class']]);
+let SCHOOL2 = new Map([['school type', 'Public charter school with private K to guarantee admission'], 
+						['demographics', 'Majority black and Latinx students'],
+						['discipline', 'Disciplinary process includes meetings with parents and staff process; suspension occurs after third disciplinary infraction.'],
+						['academic', 'Average test scores'],
+						['tracking', 'Students are primarily randomly assigned; gifted ed program can be tested into.'],
+						['support', 'Provides basic support mechanisms for students, including mental and physical health services, as well as a variety of disabilities supports.'],
+						['class size', '25+ students / class']]);
+let SCHOOL3 = new Map([['school type', 'Private school with sufficient need-based financial aid to support your family.'], 
+						['demographics', 'Majority white students, with 2% black and Latinx students'],
+						['discipline', 'Disciplinary process includes meetings with parents and staff, and suspension as a last resort.'],
+						['academic', 'Above average test scores'],
+						['tracking', 'Students are randomly assigned to classes.'],
+						['support', 'Strong support mechanisms for struggling students to receive additional support through tutoring, personalized advising, test prep courses, etc.'],
+						['15-20 students / class']]);
+let SCHOOLS = [SCHOOL1, SCHOOL2, SCHOOL3];
+
 
 // Called each time the user selects a value statement
 // Increments the user's scores according to selected statement
@@ -93,7 +118,7 @@ function displaySchools() {
 
 // Generates school table from school maps
 function insertSchoolData() {
-	school1.forEach(function(value, key, map) {
+	SCHOOL1.forEach(function(value, key, map) {
 		$.get("schools-display.html", function(data){
 			let rowHtml = generateSchoolPropHtml(key, data);
 			$("#schools").append(rowHtml);
@@ -111,9 +136,9 @@ function insertSchoolData() {
 // Updates html from schools-display.html for each school property
 function generateSchoolPropHtml(prop, data) {
 	data = data.replace("School Name", prop);
-	data = data.replace("School1", school1.get(prop));
-	data = data.replace("School2", school2.get(prop));
-	data = data.replace("School3", school3.get(prop));
+	data = data.replace("School1", SCHOOL1.get(prop));
+	data = data.replace("School2", SCHOOL2.get(prop));
+	data = data.replace("School3", SCHOOL3.get(prop));
 	return data;
 }
 
@@ -127,11 +152,3 @@ function chooseSchool(num) {
 window.onload = function(){
 	start();
 };
-
-
-// School maps
-// TODO: Move to top of file and make const
-let school1 = new Map([['school type', 'public school'], ['demographics', 'a']]);
-let school2 = new Map([['school type', 'charter school'], ['demographics', 'b']]);
-let school3 = new Map([['school type', 'private school'], ['demographics', 'c']]);
-let schools = [school1, school2, school3];
