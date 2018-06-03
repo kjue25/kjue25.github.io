@@ -103,7 +103,7 @@ function insertSchoolData() {
 	});
 }
 
-function convertSchoolPropHtml(prop, data) {
+function generateSchoolPropHtml(prop, data) {
 	data.replace("School1", school1.get(prop));
 	data.replace("School2", school2.get(prop));
 	data.replace("School3", school3.get(prop));
