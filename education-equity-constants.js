@@ -1,6 +1,7 @@
 let INSTRUCTIONS = ["For the following questions, choose the option which best describes your beliefs and values.",
 					"Now, imagine you are a parent with a child who is about to start school for the first time.",
 					"You are trying to choose a school for your child and have a few options:"];
+
 let VALUE_STATEMENTS = [["I believe all students in a classroom should receive equal attention from the teacher.", "I believe students who are struggling should receive more attention from the teacher."],
 						["I believe schools should have different classes for advanced and underperforming students.", "I believe that students should be in heterogeneous classrooms that cater to all abilities."],
 						["I believe quantitative metrics like test scores and college admission rates are better measures of school quality than environmental factors.", "I believe environmental factors like racial and ethnic diversity are better measures of school quality than quantitative metrics like test scores."], 
@@ -9,6 +10,9 @@ let VALUE_STATEMENTS = [["I believe all students in a classroom should receive e
 						["I believe that suspension should be allowed as a form of discipline in schools.", "I believe that suspension should not be allowed as a form of discipline in schools."], 
 						["I believe it is the job of policymakers to create policies that promote racial integration in schools.", "I believe that policymakers are not responsible for creating policies around racial integration in schools."], 
 						["I believe that schools should prioritize academic rigor.", "I believe that schools should prioritize students’ happiness and emotional well-being."]];
+
+//map from value statement number to Left and Right arrays which represent score 
+//increments in each user_score category for choices of left or right value statement
 let SCORES = new Map([[0,[[-1,0,0,0,0,0], [1,0,0,0,0,0]]], 
 					  [1, [[0,-1,0,0,0,0],[0,1,0,0,0,0]]], 
 					  [2, [[0,0,-1,0,0,0],[0,0,1,1,0,0]]], 
@@ -16,9 +20,9 @@ let SCORES = new Map([[0,[[-1,0,0,0,0,0], [1,0,0,0,0,0]]],
 					  [4, [[0,0,0,1,0,0],[0,0,-1,-1,0,0]]],
 					  [5, [[0,0,0,0,0,-1],[0,0,0,0,0,1]]],
 					  [6, [[0,0,0,1,0,0],[0,0,0,0,0,0]]],
-					  [7, [[0,0,-1,0,0,0],[0,0,0,0,0,0]]]]); //Value statement index to score effects (a tuple of [left score array, right score array])
+					  [7, [[0,0,-1,0,0,0],[0,0,0,0,0,0]]]]);
 
-// Corresponding indices to score category for equitable_statements, user_choices, SCHOOL_EQUITY_CATEGORIES:
+// Corresponding indices to score category for equitable_statements, user_score, SCHOOL_EQUITY_CATEGORIES:
 let CATEGORY_TO_INDEX_MAP = new Map([[0, 'support equity'],
 					  	   	 [1, 'opportunity equity'],
 					  	   	 [2, 'testing'],
@@ -26,7 +30,7 @@ let CATEGORY_TO_INDEX_MAP = new Map([[0, 'support equity'],
 					  	   	 [4, 'resource equity'], 
 					  	   	 [5, 'discipline']]);
 
-// School maps
+// School maps of school property to property of specific school.
 let SCHOOL1 = new Map([['school type', 'public school'], 
 						['demographics', 'Majority Asian and white students, with 10% black and Latinx students'],
 						['discipline', 'Students cannot be suspended; instead, they are required to attend counseling services.'],
@@ -48,11 +52,18 @@ let SCHOOL3 = new Map([['school type', 'Private school with sufficient need-base
 						['tracking', 'Students are randomly assigned to classes.'],
 						['support programs', 'Strong support mechanisms for struggling students to receive additional support through tutoring, personalized advising, test prep courses, etc.'],
 						['class size', '15-20 students / class']]);
+
+//array of schools
 let SCHOOLS = [SCHOOL1, SCHOOL2, SCHOOL3];
+
+//Map of schools to arrays of flags which represent potential value mismatches for the category represented by 
+//the CATEGORY_TO_INDEX_MAP above. If flag is up for the user-selected school and user_score for same index is >0, 
+//a value/choice mismatch has occured
 let SCHOOL_EQUITY_CATEGORIES = new Map([[SCHOOL1, [1,1,0,0,1,0]],
 									  [SCHOOL2, [0,1,0,1,0,1]],
 									  [SCHOOL3, [0,0,1,1,1,1]]]); // 1s represent value categories that will misalign the user_score is > 0 for that category
 
+//School properties which correspond to school property indices.
 let SCHOOL_PROPERTY_TO_INDEX_MAP = new Map([[0, 'school type'],
 											[1, 'demographics'],
 											[2, 'discipline'],
@@ -61,6 +72,8 @@ let SCHOOL_PROPERTY_TO_INDEX_MAP = new Map([[0, 'school type'],
 											[5, 'support programs'],
 											[6, 'class size']]);
 
+//Value category keys that map to arrays of school property flags defined by the SCHOOL_PROPERTY_TO_INDEX_MAP above. If property is flagged, 
+//it indicates that the property relates to the equity category and should be flagged if there is a school choice/equity category mismatch.
 let CATEGORY_TO_SCHOOL_PROPERTIES =new  Map([['support equity', [0,0,0,0,0,1,1]],
 											 ['opportunity equity', [0,0,0,0,1,0,1]],
 											 ['testing', [0,0,0,1,0,0,0]],
