@@ -179,24 +179,28 @@ function chooseSchool(num) {
 	$('#instructions').text("You chose school " + (num+1));
 	$('#schools').hide();
 
+	let summaryString = "";
 	let chosenSchool = SCHOOLS[num];
 	for (let i = 0; i < user_scores.length; i++) {
 		if (SCHOOLEQUITYCATEGORIES.get(chosenSchool)[i] && (user_scores[i] > 0)) {
 			let category = CATEGORY_TO_INDEX_MAP.get(i);
-			console.log("School" + num + "is inequitable in " + category);
-			console.log("because of the following properties: ");
+			summaryString += "<p>School" + num + "is inequitable in " + category;
+			summaryString += " because of the following properties: </p><ul>";
 			let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
 			for (let j = 0; j < properties.length; j++) {
 				if (properties[j]) {
-					console.log(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + ": " + chosenSchool.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)));
+					summaryString += "<li>" +SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + ": " + chosenSchool.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)) + "</li>";
 				}
 			}
-			console.log("This conflicts with your chosen values: ");
+			summaryString += "</ul><p>This conflicts with your chosen values: </p><ul>";
 			for (let j = 0; j < equitable_statements[i].length; j++) {
-				console.log(equitable_statements[i][j]);
+				summaryString += "<li>" + equitable_statements[i][j] + "</li>";
 			}
+			summaryString += "</ul>";
 		}
 	}
+
+	$('#summary').html(summaryString);
 }
 
 window.onload = function(){
