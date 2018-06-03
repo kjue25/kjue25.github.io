@@ -104,6 +104,7 @@ function insertSchoolData() {
 }
 
 function generateSchoolPropHtml(prop, data) {
+	data = data.replace("School Name", prop);
 	data = data.replace("School1", school1.get(prop));
 	data = data.replace("School2", school2.get(prop));
 	data = data.replace("School3", school3.get(prop));
