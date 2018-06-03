@@ -49,9 +49,9 @@ let SCHOOL3 = new Map([['school type', 'Private school with sufficient need-base
 						['support programs', 'Strong support mechanisms for struggling students to receive additional support through tutoring, personalized advising, test prep courses, etc.'],
 						['class size', '15-20 students / class']]);
 let SCHOOLS = [SCHOOL1, SCHOOL2, SCHOOL3];
-let SCHOOL_EQUITY_CATEGORIES = new Map([[SCHOOL1, [1,1,0,0,1,0]],
-									  [SCHOOL2, [0,1,0,1,0,1]],
-									  [SCHOOL3, [0,0,1,1,1,1]]]); // 1s represent value categories that will misalign the user_score is > 0 for that category
+let SCHOOL_EQUITY_CATEGORIES = new Map([[SCHOOL1, [1,1,0,1,0,0]],
+									    [SCHOOL2, [0,1,0,0,1,1]],
+									    [SCHOOL3, [0,0,1,1,1,1]]]); // 1s represent value categories that will misalign the user_score is > 0 for that category
 
 let SCHOOL_PROPERTY_TO_INDEX_MAP = new Map([[0, 'school type'],
 											[1, 'demographics'],
