@@ -16,18 +16,25 @@ let VALUE_STATEMENTS = [["I believe all students in a classroom should receive e
 						["I believe it is the job of policymakers to create policies that promote racial integration in schools.", "I believe that policymakers are not responsible for creating policies around racial integration in schools."], 
 						["I believe that schools should prioritize academic rigor.", "I believe that schools should prioritize students’ happiness and emotional well-being."]];
 let SCORES = new Map([[0,[[-1,0,0,0,0,0], [1,0,0,0,0,0]]], 
-					[1, [[0,-1,0,0,0,0],[0,1,0,0,0,0]]], 
-					[2, [[0,0,1,0,0,0],[0,0,-1,1,0,0]]], 
-					[3, [[0,0,0,0,1,0,],[0,0,0,0,-1,0]]],
-					[4, [[0,0,0,1,0,0],[0,0,1,-1,0,0]]],
-					[5, [[0,0,0,0,0,-1],[0,0,0,0,0,1]]],
-					[6, [[0,0,0,1,0,0],[0,0,0,0,0,0]]],
-					[7, [[0,0,1,0,0,0],[0,0,0,0,0,0]]]]); //Value statement index to score effects (a tuple of [left score array, right score array])
+					  [1, [[0,-1,0,0,0,0],[0,1,0,0,0,0]]], 
+					  [2, [[0,0,1,0,0,0],[0,0,-1,1,0,0]]], 
+					  [3, [[0,0,0,0,1,0,],[0,0,0,0,-1,0]]],
+					  [4, [[0,0,0,1,0,0],[0,0,1,-1,0,0]]],
+					  [5, [[0,0,0,0,0,-1],[0,0,0,0,0,1]]],
+					  [6, [[0,0,0,1,0,0],[0,0,0,0,0,0]]],
+					  [7, [[0,0,1,0,0,0],[0,0,0,0,0,0]]]]); //Value statement index to score effects (a tuple of [left score array, right score array])
 
-let curr_index = 0;
-let value_choices = [];   //each index represents value choice; 0=left value, 1=right value
-let user_scores = [0,0,0,0,0,0]; // corresponding index to score category: [0: support equity, 1: opportunity equity, 2: testing,
-								 //											3: diversity, 4: resource equity, 5: discipline]
+// Corresponding indices to score category for equitable_statements, user_choices, SCHOOLEQUITYCATEGORIES:
+let CATEGORY_TO_INDEX_MAP = new Map([[1, 'support equity'],
+					  	   	 [2, 'opportunity equity'],
+					  	   	 [3, 'testing'],
+					  	   	 [4, 'diversity'],
+					  	   	 [5, 'resource equity'], 
+					  	   	 [6, 'discipline']]);
+
+let equitable_statements = [[],[],[],[],[],[]];
+let user_scores = [0,0,0,0,0,0]; // >0 means the user's value statements prioritized equity for that category
+								 
 // School maps
 // TODO: Move to top of file and make const
 let SCHOOL1 = new Map([['school type', 'public school'], 
@@ -52,14 +59,23 @@ let SCHOOL3 = new Map([['school type', 'Private school with sufficient need-base
 						['support', 'Strong support mechanisms for struggling students to receive additional support through tutoring, personalized advising, test prep courses, etc.'],
 						['15-20 students / class']]);
 let SCHOOLS = [SCHOOL1, SCHOOL2, SCHOOL3];
+let SCHOOLEQUITYCATEGORIES = new Map([[SCHOOL1, [1,1,0,0,1,0]],
+									  [SCHOOL2, [0,1,0,1,0,1]],
+									  [SCHOOL3, [0,0,1,1,1,1]]]); // 1s represent value categories that will misalign the user_score is > 0 for that category
 
+let curr_index = 0;
 
 // Called each time the user selects a value statement
 // Increments the user's scores according to selected statement
 function next(clicked_panel) {
-	value_choices[curr_index] = clicked_panel;
+	let statement = VALUE_STATEMENTS[curr_index][clicked_panel];
 	for (let i = 0; i < 6; i++) {
-		user_scores[i] += SCORES.get(curr_index)[clicked_panel][i];
+		let category_change = SCORES.get(curr_index)[clicked_panel][i]
+		user_scores[i] += category_change;
+		// If statement valued equity, store in equitable_statements
+		if (category_change > 0) {
+			equitable_statements[i].push(statement);
+		}
 	}
 	changePanels();
 }
@@ -145,8 +161,19 @@ function generateSchoolPropHtml(prop, data) {
 // Handles school selection
 function chooseSchool(num) {
 	$('#instructions').show();
-	$('#instructions').text("You chose school " + num);
+	$('#instructions').text("You chose school " + (num+1));
 	$('#schools').hide();
+
+	let chosenSchool = SCHOOLS[num];
+	for (let i = 0; i < user_scores.length; i++) {
+		if (SCHOOLEQUITYCATEGORIES.get(chosenSchool)[i] && (user_scores[i] > 0)) {
+			console.log("School" + num + "is inequitable in " + CATEGORY_TO_INDEX_MAP.get(i));
+			console.log("This conflicts with your chosen values: ");
+			for (let j = 0; j < equitable_statements[i].length; j++) {
+				console.log(equitable_statements[i][j]);
+			}
+		}
+	}
 }
 
 window.onload = function(){
