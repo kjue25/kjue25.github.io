@@ -121,6 +121,8 @@ function chooseSchool(num) {
 	}
 
 	$('#schools').addClass('col-sm-4');
+	$('.category').addClass('col-sm-4');
+	$('.school' + num).addClass('col-sm-8');
 	$('#summary').addClass('col-sm-8');
 	// FIXME: Still to click on not shown schools
 
