@@ -30,7 +30,7 @@ let user_scores = [0,0,0,0,0,0]; // corresponding index to score category: [0: s
 								 //											3: diversity, 4: resource equity, 5: discipline]
 
 // Called each time the user selects a value statement
-// Increments 
+// Increments the user's scores according to selected statement
 function next(clicked_panel) {
 	value_choices[curr_index] = clicked_panel;
 	for (let i = 0; i < 6; i++) {
@@ -39,6 +39,7 @@ function next(clicked_panel) {
 	changePanels();
 }
 
+// Called by next() to update panel text after statement has been selected
 function changePanels() {
 	curr_index++;
 	if (curr_index < 8) {
@@ -49,18 +50,20 @@ function changePanels() {
 	}
 }
 
+// Called at the start of the program to hide html elements
 function start() {
 	$('#instructions').text(INSTRUCTIONS[0]);
 	$('#value_statements').hide();
 	$('#parent_instructions_button').hide();
 	$('#display_schools_button').hide();
-
 	$('.overlay-parent').hide();
 }
 
 
 // lol need to fix all the button names/make these methods clearer...
 // there's probably a better way to do this than three separate buttons
+// The following four buttons show and hide the relevant instruction buttons 
+// and update the instruction div text
 function showNextInstructions() {
 	$('#instructions').hide();
 	$('#intro_instructions_button').hide();
@@ -88,6 +91,7 @@ function displaySchools() {
 	});
 }
 
+// Generates school table from school maps
 function insertSchoolData() {
 	school1.forEach(function(value, key, map) {
 		$.get("schools-display.html", function(data){
@@ -96,12 +100,15 @@ function insertSchoolData() {
 		});
 	});
 
+	// Use overlay spans to select a school
 	$('.overlay-parent').show();
 	$('#school1-overlay').css("display", "block");
 	$('#school2-overlay').css("display", "block");
 	$('#school3-overlay').css("display", "block");
 }
 
+// Called by insertSchoolData()
+// Updates html from schools-display.html for each school property
 function generateSchoolPropHtml(prop, data) {
 	data = data.replace("School Name", prop);
 	data = data.replace("School1", school1.get(prop));
@@ -110,6 +117,7 @@ function generateSchoolPropHtml(prop, data) {
 	return data;
 }
 
+// Handles school selection
 function chooseSchool(num) {
 	$('#instructions').show();
 	$('#instructions').text("You chose school " + num);
@@ -121,7 +129,8 @@ window.onload = function(){
 };
 
 
-
+// School maps
+// TODO: Move to top of file and make const
 let school1 = new Map([['school type', 'public school'], ['demographics', 'a']]);
 let school2 = new Map([['school type', 'charter school'], ['demographics', 'b']]);
 let school3 = new Map([['school type', 'private school'], ['demographics', 'c']]);
