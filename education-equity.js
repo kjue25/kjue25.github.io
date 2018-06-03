@@ -25,12 +25,12 @@ let SCORES = new Map([[0,[[-1,0,0,0,0,0], [1,0,0,0,0,0]]],
 					  [7, [[0,0,1,0,0,0],[0,0,0,0,0,0]]]]); //Value statement index to score effects (a tuple of [left score array, right score array])
 
 // Corresponding indices to score category for equitable_statements, user_choices, SCHOOLEQUITYCATEGORIES:
-let CATEGORY_TO_INDEX_MAP = new Map([[1, 'support equity'],
-					  	   	 [2, 'opportunity equity'],
-					  	   	 [3, 'testing'],
-					  	   	 [4, 'diversity'],
-					  	   	 [5, 'resource equity'], 
-					  	   	 [6, 'discipline']]);
+let CATEGORY_TO_INDEX_MAP = new Map([[0, 'support equity'],
+					  	   	 [1, 'opportunity equity'],
+					  	   	 [2, 'testing'],
+					  	   	 [3, 'diversity'],
+					  	   	 [4, 'resource equity'], 
+					  	   	 [5, 'discipline']]);
 
 let equitable_statements = [[],[],[],[],[],[]];
 let user_scores = [0,0,0,0,0,0]; // >0 means the user's value statements prioritized equity for that category
@@ -62,6 +62,21 @@ let SCHOOLS = [SCHOOL1, SCHOOL2, SCHOOL3];
 let SCHOOLEQUITYCATEGORIES = new Map([[SCHOOL1, [1,1,0,0,1,0]],
 									  [SCHOOL2, [0,1,0,1,0,1]],
 									  [SCHOOL3, [0,0,1,1,1,1]]]); // 1s represent value categories that will misalign the user_score is > 0 for that category
+
+let SCHOOL_PROPERTY_TO_INDEX_MAP = Map([[0, 'school type'],
+										[1, 'demographics'],
+										[2, 'discipline'],
+										[3, 'academics'],
+										[4, 'tracking'],
+										[5, 'support programs'],
+										[6, 'class size']])
+
+let CATEGORY_TO_SCHOOL_PROPERTIES = Map([['support equity', [0,0,0,0,0,1,1]],
+										['opportunity equity', [0,0,0,0,1,0,1]],
+										['testing', [0,0,0,1,0,0,0]],
+										['resource equity', [1,0,0,0,0,0,0]],
+										['diversity', [0,1,0,0,0,0,0,0]],
+										['discipline', [0,0,1,0,0,0,0]]])
 
 let curr_index = 0;
 
