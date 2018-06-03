@@ -89,13 +89,15 @@ function displaySchools() {
 }
 
 function insertSchoolData() {
-	console.log("SCHOOL DATA");
 	school1.forEach(function(value, key, map) {
 		$.get("schools-display.html", function(data){
 			let rowHtml = generateSchoolPropHtml(key, data);
 			$("#schools").append(rowHtml);
 		});
 	});
+	$('#school1-overlay').css("display", "block");
+	$('#school2-overlay').css("display", "block");
+	$('#school3-overlay').css("display", "block");
 }
 
 function generateSchoolPropHtml(prop, data) {
@@ -106,6 +108,11 @@ function generateSchoolPropHtml(prop, data) {
 	return data;
 }
 
+function chooseSchool(num) {
+	$('#instructions').show();
+	$('#instructions').text("You choose school " + num);
+	$('#schools').hide();
+}
 
 window.onload = function(){
 	start();
