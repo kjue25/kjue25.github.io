@@ -115,7 +115,7 @@ function chooseSchool(num) {
 	
 	// Just hide the school columns you didn't choose
 	for (let i = 0; i < SCHOOLS.length; i++) {
-		if (i !== num+1) {
+		if (i !== num) {
 			$('.school' + i).hide();
 		}
 	}
