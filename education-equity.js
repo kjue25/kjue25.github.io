@@ -96,7 +96,7 @@ function insertSchoolData() {
 	console.log("SCHOOL DATA");
 	school1.forEach(function() {
 		$.get("schools-display.html", function(data){
-			$("#schools").html(data);
+			$("#schools").append(data);
 		});
 	});
 }
