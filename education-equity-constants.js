@@ -32,35 +32,36 @@ let CATEGORY_TO_INDEX_MAP = new Map([[0, 'support equity'],
 
 // School maps of school property to property of specific school.
 let SCHOOL1 = new Map([['school type', 'public school'], 
-						['demographics', 'Majority Asian and white students, with 10% black and Latinx students'],
-						['discipline', 'Students cannot be suspended; instead, they are required to attend counseling services.'],
-						['academics', 'Below average test scores'],
-						['tracking', 'After 1st grade, students are separated into classes based on academic performance; students can switch tracks each year given standardized test performance.'],
-						['support programs', 'Provides bare minimum for legally required support services, such as mental and physical health counseling and disability accommodations. There is one counselor for the entire school.'],
-						['supplemental programs', 'No organized art or music program.'],
-						['class size', '20-25 students / teacher'],
-						['school size', '486']]);
+					   ['demographics', 'Majority Asian and white students, with 10% black and Latinx students'],
+					   ['discipline', 'Students cannot be suspended; instead, they are required to attend counseling services.'],
+					   ['academics', 'Below average test scores'],
+					   ['tracking', 'After 1st grade, students are separated into classes based on academic performance; students can switch tracks each year given standardized test performance.'],
+					   ['support programs', 'Provides bare minimum for legally required support services, such as mental and physical health counseling and disability accommodations. There is one counselor for the entire school.'],
+					   ['supplemental programs', 'No organized art or music program.'],
+					   ['class size', '20-25 students / teacher'],
+					   ['school size', '486']]);
 let SCHOOL2 = new Map([['school type', 'Public charter school with private K to guarantee admission'], 
-						['demographics', 'Majority black and Latinx students'],
-						['discipline', 'Disciplinary process includes meetings with parents and staff process; suspension occurs after third disciplinary infraction.'],
-						['academics', 'Average test scores'],
-						['tracking', 'Students are primarily randomly assigned; gifted ed program can be tested into.'],
-						['support programs', 'Good quality support services, such as mental and physical health counseling and disability accommodations. There are 4 school counselors.'],
-						['supplemental programs', 'After school music lessons that parents can opt in and pay for.'],
-						['class size', '25+ students / teacher'],
-						['school size', '553']]);
+					   ['demographics', 'Majority black and Latinx students'],
+					   ['discipline', 'Disciplinary process includes meetings with parents and staff process; suspension occurs after third disciplinary infraction.'],
+					   ['academics', 'Average test scores'],
+					   ['tracking', 'Students are primarily randomly assigned; gifted ed program can be tested into.'],
+					   ['support programs', 'Good quality support services, such as mental and physical health counseling and disability accommodations. There are 4 school counselors.'],
+					   ['supplemental programs', 'After school music lessons that parents can opt in and pay for.'],
+					   ['class size', '25+ students / teacher'],
+					   ['school size', '553']]);
 let SCHOOL3 = new Map([['school type', 'Private school with sufficient need-based financial aid to support your family.'], 
-						['demographics', 'Majority white students, with 2% black and Latinx students'],
-						['discipline', 'Disciplinary process includes meetings with parents and staff, and suspension as a last resort.'],
-						['academics', 'Above average test scores'],
-						['tracking', 'Students are randomly assigned to classes.'],
-						['support programs', 'High quality support services, such as mental and physical health counseling and disability accommodations. There is a specialized team of 10 support personnel who provide hyper individualized care for each student.'],
-						['supplemental programs', 'Has arts and music program with specialized facilities and instructors.'],
-						['class size', '15-20 students / teacher'],
-						['school size', '204']]);
+					   ['demographics', 'Majority white students, with 2% black and Latinx students'],
+					   ['discipline', 'Disciplinary process includes meetings with parents and staff, and suspension as a last resort.'],
+					   ['academics', 'Above average test scores'],
+					   ['tracking', 'Students are randomly assigned to classes.'],
+					   ['support programs', 'High quality support services, such as mental and physical health counseling and disability accommodations. There is a specialized team of 10 support personnel who provide hyper individualized care for each student.'],
+					   ['supplemental programs', 'Has arts and music program with specialized facilities and instructors.'],
+					   ['class size', '15-20 students / teacher'],
+					   ['school size', '204']]);
 
-//array of schools
+//arrays of schools
 let SCHOOLS = [SCHOOL1, SCHOOL2, SCHOOL3];
+let SCHOOL_NAMES = ['Washington Elementary', 'Lincoln Elementary', 'Stony Brook Elementary'];
 
 //Map of schools to arrays of flags which represent potential value mismatches for the category represented by 
 //the CATEGORY_TO_INDEX_MAP above. If flag is up for the user-selected school and user_score for same index is >0, 

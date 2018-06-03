@@ -111,7 +111,7 @@ function generateSchoolPropHtml(prop, data) {
 // Handles school selection
 function chooseSchool(num) {
 	$('#instructions').show();
-	$('#instructions').text("You chose school " + (num+1));
+	$('#instructions').text("You chose school " + SCHOOL_NAMES[num]);
 	
 	// Just hide the school columns you didn't choose
 	for (let i = 0; i < SCHOOLS.length; i++) {
@@ -119,6 +119,10 @@ function chooseSchool(num) {
 			$('.school' + i).hide();
 		}
 	}
+
+	$('#schools').addClass('col-sm-4');
+	$('#summary').addClass('col-sm-8');
+	// FIXME: Still to click on not shown schools
 
 	// Generates summary based on selected school
 	let summary_string = "";
