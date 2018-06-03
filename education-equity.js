@@ -97,16 +97,16 @@ function insertSchoolData() {
 	school1.forEach(function(value, key, map) {
 		$.get("schools-display.html", function(data){
 			let rowHtml = generateSchoolPropHtml(key, data);
-			console.log(data);
+			console.log(rowHtml);
 			$("#schools").append(rowHtml);
 		});
 	});
 }
 
 function generateSchoolPropHtml(prop, data) {
-	data.replace("School1", school1.get(prop));
-	data.replace("School2", school2.get(prop));
-	data.replace("School3", school3.get(prop));
+	data = data.replace("School1", school1.get(prop));
+	data = data.replace("School2", school2.get(prop));
+	data = data.replace("School3", school3.get(prop));
 	return data;
 }
 
