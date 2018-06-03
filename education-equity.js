@@ -50,7 +50,6 @@ function changePanels() {
 }
 
 function start() {
-	console.log("STARTING");
 	$('#instructions').text(INSTRUCTIONS[0]);
 	$('#value_statements').hide();
 	$('#parent_instructions_button').hide();
@@ -87,7 +86,6 @@ function displaySchools() {
 	$("#schools").load("schools-display.html", function() {
 		insertSchoolData();
 	});
-	// Add code to display schools based on school maps
 }
 
 function insertSchoolData() {
@@ -114,7 +112,7 @@ function generateSchoolPropHtml(prop, data) {
 
 function chooseSchool(num) {
 	$('#instructions').show();
-	$('#instructions').text("You choose school " + num);
+	$('#instructions').text("You chose school " + num);
 	$('#schools').hide();
 }
 
