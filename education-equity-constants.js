@@ -61,7 +61,7 @@ let SCHOOL_PROPERTY_TO_INDEX_MAP = new Map([[0, 'school type'],
 											[5, 'support programs'],
 											[6, 'class size']]);
 
-let CATEGORY_TO_SCHOOL_PROPERTIES =new  Map([['support equity', [0,0,0,0,0,1,1]],
+let CATEGORY_TO_SCHOOL_PROPERTIES = new  Map([['support equity', [0,0,0,0,0,1,1]],
 											 ['opportunity equity', [0,0,0,0,1,0,1]],
 											 ['testing', [0,0,0,1,0,0,0]],
 											 ['resource equity', [1,0,0,0,0,0,0]],
