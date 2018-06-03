@@ -55,6 +55,9 @@ function start() {
 	$('#value_statements').hide();
 	$('#parent_instructions_button').hide();
 	$('#display_schools_button').hide();
+	$('#school1-overlay').hide();
+	$('#school2-overlay').hide();
+	$('#school3-overlay').hide();
 }
 
 
@@ -95,6 +98,9 @@ function insertSchoolData() {
 			$("#schools").append(rowHtml);
 		});
 	});
+	$('#school1-overlay').show();
+	$('#school2-overlay').show();
+	$('#school3-overlay').show();
 	$('#school1-overlay').css("display", "block");
 	$('#school2-overlay').css("display", "block");
 	$('#school3-overlay').css("display", "block");
