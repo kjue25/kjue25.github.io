@@ -40,43 +40,43 @@ let user_scores = [0,0,0,0,0,0]; // >0 means the user's value statements priorit
 let SCHOOL1 = new Map([['school type', 'public school'], 
 						['demographics', 'Majority Asian and white students, with 10% black and Latinx students'],
 						['discipline', 'Students cannot be suspended; instead, they are required to attend counseling services.'],
-						['academic', 'Below average test scores'],
+						['academics', 'Below average test scores'],
 						['tracking', 'After 1st grade, students are separated into tracks based on grades; ability to switch tracks each year given standardized test performance.'],
 						['support', 'Provides bare minimum for legally required support services, such as counseling; however, it is reserved for those who need it the most, and may not be of the best quality.'],
 						['class size', '20-25 students / class']]);
 let SCHOOL2 = new Map([['school type', 'Public charter school with private K to guarantee admission'], 
 						['demographics', 'Majority black and Latinx students'],
 						['discipline', 'Disciplinary process includes meetings with parents and staff process; suspension occurs after third disciplinary infraction.'],
-						['academic', 'Average test scores'],
+						['academics', 'Average test scores'],
 						['tracking', 'Students are primarily randomly assigned; gifted ed program can be tested into.'],
 						['support', 'Provides basic support mechanisms for students, including mental and physical health services, as well as a variety of disabilities supports.'],
 						['class size', '25+ students / class']]);
 let SCHOOL3 = new Map([['school type', 'Private school with sufficient need-based financial aid to support your family.'], 
 						['demographics', 'Majority white students, with 2% black and Latinx students'],
 						['discipline', 'Disciplinary process includes meetings with parents and staff, and suspension as a last resort.'],
-						['academic', 'Above average test scores'],
+						['academics', 'Above average test scores'],
 						['tracking', 'Students are randomly assigned to classes.'],
 						['support', 'Strong support mechanisms for struggling students to receive additional support through tutoring, personalized advising, test prep courses, etc.'],
-						['15-20 students / class']]);
+						['class size', '15-20 students / class']]);
 let SCHOOLS = [SCHOOL1, SCHOOL2, SCHOOL3];
 let SCHOOLEQUITYCATEGORIES = new Map([[SCHOOL1, [1,1,0,0,1,0]],
 									  [SCHOOL2, [0,1,0,1,0,1]],
 									  [SCHOOL3, [0,0,1,1,1,1]]]); // 1s represent value categories that will misalign the user_score is > 0 for that category
 
-let SCHOOL_PROPERTY_TO_INDEX_MAP = Map([[0, 'school type'],
-										[1, 'demographics'],
-										[2, 'discipline'],
-										[3, 'academics'],
-										[4, 'tracking'],
-										[5, 'support programs'],
-										[6, 'class size']])
+let SCHOOL_PROPERTY_TO_INDEX_MAP = new Map([[0, 'school type'],
+											[1, 'demographics'],
+											[2, 'discipline'],
+											[3, 'academics'],
+											[4, 'tracking'],
+											[5, 'support programs'],
+											[6, 'class size']])
 
-let CATEGORY_TO_SCHOOL_PROPERTIES = Map([['support equity', [0,0,0,0,0,1,1]],
-										['opportunity equity', [0,0,0,0,1,0,1]],
-										['testing', [0,0,0,1,0,0,0]],
-										['resource equity', [1,0,0,0,0,0,0]],
-										['diversity', [0,1,0,0,0,0,0,0]],
-										['discipline', [0,0,1,0,0,0,0]]])
+let CATEGORY_TO_SCHOOL_PROPERTIES =new  Map([['support equity', [0,0,0,0,0,1,1]],
+											 ['opportunity equity', [0,0,0,0,1,0,1]],
+											 ['testing', [0,0,0,1,0,0,0]],
+											 ['resource equity', [1,0,0,0,0,0,0]],
+											 ['diversity', [0,1,0,0,0,0,0,0]],
+											 ['discipline', [0,0,1,0,0,0,0]]])
 
 let curr_index = 0;
 
@@ -182,7 +182,15 @@ function chooseSchool(num) {
 	let chosenSchool = SCHOOLS[num];
 	for (let i = 0; i < user_scores.length; i++) {
 		if (SCHOOLEQUITYCATEGORIES.get(chosenSchool)[i] && (user_scores[i] > 0)) {
-			console.log("School" + num + "is inequitable in " + CATEGORY_TO_INDEX_MAP.get(i));
+			let category = CATEGORY_TO_INDEX_MAP.get(i);
+			console.log("School" + num + "is inequitable in " + category);
+			console.log("because of the following properties: ");
+			let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
+			for (let j = 0; j < properties.length; j++) {
+				if (properties[j]) {
+					console.log(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + ": " + chosenSchool.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)));
+				}
+			}
 			console.log("This conflicts with your chosen values: ");
 			for (let j = 0; j < equitable_statements[i].length; j++) {
 				console.log(equitable_statements[i][j]);
