@@ -93,9 +93,9 @@ function insertSchoolData() {
 
 	// Use overlay spans to select a school
 	$('.overlay-parent').show();
-	$('#school1-overlay').css("display", "block");
-	$('#school2-overlay').css("display", "block");
-	$('#school3-overlay').css("display", "block");
+	$('#school1-overlay').css('display', 'block');
+	$('#school2-overlay').css('display', 'block');
+	$('#school3-overlay').css('display', 'block');
 }
 
 // Called by insertSchoolData()
