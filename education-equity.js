@@ -86,8 +86,9 @@ function showSchoolInstructions() {
 function displaySchools() {
 	$('#instructions').hide();
 	$('#display_schools_button').hide();
-	$("#schools").load("schools-display.html");
-
+	$("#schools").load("schools-display.html", function() {
+		insertSchoolData();
+	});
 	// Add code to display schools based on school maps
 }
 
