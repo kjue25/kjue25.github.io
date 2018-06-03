@@ -13,7 +13,7 @@ let curr_index = 0;
 // Increments the user's scores according to selected statement
 function next(clicked_panel) {
 	let statement = VALUE_STATEMENTS[curr_index][clicked_panel];
-	for (let i = 0; i < 6; i++) {
+	for (let i = 0; i < NUM_VALUE_CATEGORIES; i++) {
 		let category_change = SCORES.get(curr_index)[clicked_panel][i]
 		user_scores[i] += category_change;
 		// If statement valued equity, store in equitable_statements
@@ -27,7 +27,7 @@ function next(clicked_panel) {
 // Called by next() to update panel text after statement has been selected
 function changePanels() {
 	curr_index++;
-	if (curr_index < 8) {
+	if (curr_index < NUM_STATEMENT_PANELS) {
 		$('#left_panel').text(VALUE_STATEMENTS[curr_index][0]);
 		$('#right_panel').text(VALUE_STATEMENTS[curr_index][1]);
 	} else {

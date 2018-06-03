@@ -67,3 +67,6 @@ let CATEGORY_TO_SCHOOL_PROPERTIES =new  Map([['support equity', [0,0,0,0,0,1,1]]
 											 ['resource equity', [1,0,0,0,0,0,0]],
 											 ['diversity', [0,1,0,0,0,0,0,0]],
 											 ['discipline', [0,0,1,0,0,0,0]]]);
+
+let NUM_STATEMENT_PANELS = 8;
+let NUM_VALUE_CATEGORIES = 6;
