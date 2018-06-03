@@ -51,8 +51,7 @@ function changePanels() {
 /* * * * * * */
 // lol need to fix all the button names/make these methods clearer...
 // there's probably a better way to do this than three separate buttons
-
-// The following four button functions show and hide the relevant instruction buttons 
+// The following four button functions show and hide the relevant instruction buttons
 // and update the instructions div text
 function showNextInstructions() {
 	$('#instructions').hide();
