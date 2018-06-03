@@ -94,12 +94,22 @@ function displaySchools() {
 
 function insertSchoolData() {
 	console.log("SCHOOL DATA");
-	school1.forEach(function() {
+	school1.forEach(function(value, key, map) {
 		$.get("schools-display.html", function(data){
-			$("#schools").append(data);
+			let rowHtml = generateSchoolPropHtml(key, data);
+			console.log(data);
+			$("#schools").append(rowHtml);
 		});
 	});
 }
+
+function convertSchoolPropHtml(prop, data) {
+	data.replace("School1", school1.get(prop));
+	data.replace("School2", school2.get(prop));
+	data.replace("School3", school3.get(prop));
+	return data;
+}
+
 
 window.onload = function(){
 	start();
@@ -108,7 +118,7 @@ window.onload = function(){
 
 
 
-let school1 = new Map([['school type', 'public school'], ['demographics', '...']]);
-let school2 = new Map([]);
-let school3 = new Map([]);
+let school1 = new Map([['school type', 'public school'], ['demographics', 'a']]);
+let school2 = new Map([['school type', 'charter school'], ['demographics', 'b']]);
+let school3 = new Map([['school type', 'private school'], ['demographics', 'c']]);
 let schools = [school1, school2, school3];
