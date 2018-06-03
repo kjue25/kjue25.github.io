@@ -17,10 +17,12 @@
 </head>
 
 <body>
-
-	<div class="container">
+	<div id="title">
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<h1 class="title">Choosing Equity</h1>
+		<br><br><br>
 		<div id="instructions"></div>
-</div>
+	</div>
 	<span id="value_statements">
 		<span id="left_panel" class="cell col-sm-5" onclick="next(0);">
 			I believe all students in a classroom should receive equal attention from the teacher.
@@ -29,9 +31,12 @@
 			I believe students who are struggling should receive more attention from the teacher.
 		</span>
 	</span>
-	<button class="btn" id="intro_instructions_button" onclick="showNextInstructions();">NEXT</button>
-	<button class="btn" id="parent_instructions_button" onclick="showSchoolInstructions();">NEXT</button>
-	<button class="btn" id="display_schools_button" onclick="displaySchools()">NEXT</button>
+
+	<div id="wrapper">
+		<button class="btn" id="intro_instructions_button" onclick="showNextInstructions();">Next</button>
+		<button class="btn" id="parent_instructions_button" onclick="showSchoolInstructions();">Next</button>
+		<button class="btn" id="display_schools_button" onclick="displaySchools()">Next</button>
+	</div>
 
 	<div id="schools"></div>
 
