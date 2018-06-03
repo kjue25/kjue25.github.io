@@ -93,9 +93,9 @@ function insertSchoolData() {
 
 	// Use overlay spans to select a school
 	$('.overlay-parent').show();
-	$('#school1-overlay').css("display", "block");
-	$('#school2-overlay').css("display", "block");
-	$('#school3-overlay').css("display", "block");
+	$('#school1-overlay').css('display', 'block');
+	$('#school2-overlay').css('display', 'block');
+	$('#school3-overlay').css('display', 'block');
 }
 
 // Called by insertSchoolData()
@@ -112,7 +112,13 @@ function generateSchoolPropHtml(prop, data) {
 function chooseSchool(num) {
 	$('#instructions').show();
 	$('#instructions').text("You chose school " + (num+1));
-	$('#schools').hide(); // TODO: Instead of hiding all, just hide the school columns you didn't choose
+	
+	// Just hide the school columns you didn't choose
+	for (let i = 0; i < SCHOOLS.length; i++) {
+		if (i !== num+1) {
+			$('.school' + i).hide();
+		}
+	}
 
 	// Generates summary based on selected school
 	let summary_string = "";
