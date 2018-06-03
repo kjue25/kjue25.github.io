@@ -17,12 +17,12 @@ let VALUE_STATEMENTS = [["I believe all students in a classroom should receive e
 						["I believe that schools should prioritize academic rigor.", "I believe that schools should prioritize students’ happiness and emotional well-being."]];
 let SCORES = new Map([[0,[[-1,0,0,0,0,0], [1,0,0,0,0,0]]], 
 					  [1, [[0,-1,0,0,0,0],[0,1,0,0,0,0]]], 
-					  [2, [[0,0,1,0,0,0],[0,0,-1,1,0,0]]], 
+					  [2, [[0,0,-1,0,0,0],[0,0,1,1,0,0]]], 
 					  [3, [[0,0,0,0,1,0,],[0,0,0,0,-1,0]]],
-					  [4, [[0,0,0,1,0,0],[0,0,1,-1,0,0]]],
+					  [4, [[0,0,0,1,0,0],[0,0,-1,-1,0,0]]],
 					  [5, [[0,0,0,0,0,-1],[0,0,0,0,0,1]]],
 					  [6, [[0,0,0,1,0,0],[0,0,0,0,0,0]]],
-					  [7, [[0,0,1,0,0,0],[0,0,0,0,0,0]]]]); //Value statement index to score effects (a tuple of [left score array, right score array])
+					  [7, [[0,0,-1,0,0,0],[0,0,0,0,0,0]]]]); //Value statement index to score effects (a tuple of [left score array, right score array])
 
 // Corresponding indices to score category for equitable_statements, user_choices, SCHOOLEQUITYCATEGORIES:
 let CATEGORY_TO_INDEX_MAP = new Map([[0, 'support equity'],
