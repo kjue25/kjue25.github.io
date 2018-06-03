@@ -184,7 +184,7 @@ function chooseSchool(num) {
 	for (let i = 0; i < user_scores.length; i++) {
 		if (SCHOOLEQUITYCATEGORIES.get(chosenSchool)[i] && (user_scores[i] > 0)) {
 			let category = CATEGORY_TO_INDEX_MAP.get(i);
-			summaryString += "<p>School" + num + "is inequitable in " + category;
+			summaryString += "<p>School" + (num+1) + "is inequitable in " + category;
 			summaryString += " because of the following properties: </p><ul>";
 			let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
 			for (let j = 0; j < properties.length; j++) {
