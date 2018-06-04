@@ -15,7 +15,6 @@ let curr_panel_index = 0; // Index to track current value statement panel
 // Called at the start of the program to hide html elements
 function start() {
 	$('#instructions').text(INSTRUCTIONS[0]);
-	//$('#value_statements').hide();
 	$('#parent_instructions_button').hide();
 	$('#display_schools_button').hide();
 	$('.overlay-parent').hide();
@@ -129,7 +128,7 @@ function chooseSchool(num) {
 	// FIXME: Still able to click on not shown schools
 
 	// Generates summary based on selected school
-	let summary_string = "<p>You chose school " + SCHOOL_NAMES[num] + "</p>";
+	let summary_string = "<p>You chose school " + SCHOOL_NAMES[num] + ".</p>";
 	let chosen_school = SCHOOLS[num];
 	for (let i = 0; i < NUM_VALUE_CATEGORIES; i++) {
 		// For given category, if school is not equitable and the user valued equity in that category
