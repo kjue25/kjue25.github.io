@@ -16,7 +16,6 @@ body {
 }
 
 #instructions{
-	min-height: 100%;
 	text-align: center;
 	vertical-align: center;
 	font-family: "verdana";
@@ -30,8 +29,8 @@ body {
 .cell {
 	text-align: center;
 	font-family: "verdana";
-	font-size: 20px;
-	border: 10px solid #ffc060;
+	font-size: 40px;
+	border: 4px solid #ffc060;
 	background: #ffc078;
 	overflow: hidden;
 	border-radius: 10px;
@@ -81,7 +80,7 @@ body {
 	font-size: 12px;
 	border-radius: 12px;
 	cursor: pointer;
-	padding: 24px 40px;
+	padding: 12px 24px;
 	text-align: center;
 }
 #wrapper .btn:hover {
@@ -90,7 +89,7 @@ body {
 
 #wrapper {
   width: 100%;
-  height: 400px;
+  height: 80px;
   border: 0px;
   display: flex;
   align-items: center;
