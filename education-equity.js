@@ -15,7 +15,6 @@ let curr_panel_index = 0; // Index to track current value statement panel
 // Called at the start of the program to hide html elements
 function start() {
 	$('#instructions').text(INSTRUCTIONS[0]);
-	$('#value_statements').hide();
 	$('#parent_instructions_button').hide();
 	$('#display_schools_button').hide();
 	$('.overlay-parent').hide();
@@ -95,9 +94,9 @@ function insertSchoolData() {
 
 	// Use overlay spans to select a school
 	$('.overlay-parent').show();
-	$('#school1-overlay').css("display", "block");
-	$('#school2-overlay').css("display", "block");
-	$('#school3-overlay').css("display", "block");
+	$('#school1-overlay').css('display', 'block');
+	$('#school2-overlay').css('display', 'block');
+	$('#school3-overlay').css('display', 'block');
 }
 
 // Called by insertSchoolData()
@@ -112,12 +111,26 @@ function generateSchoolPropHtml(prop, data) {
 
 // Handles school selection
 function chooseSchool(num) {
-	$('#instructions').show();
-	$('#instructions').text("You chose school " + (num+1));
-	$('#schools').hide(); // TODO: Instead of hiding all, just hide the school columns you didn't choose
+	// $('#instructions').show();
+	// $('#instructions').text("You chose school " + SCHOOL_NAMES[num]);
+	
+	// Just hide the school columns you didn't choose
+	for (let i = 0; i < SCHOOLS.length; i++) {
+		if (i !== num) {
+			$('.school' + i).hide();
+		}
+	}
+
+	$('#schools').addClass('col-sm-4');
+	$('.category').removeClass('col-sm-3');
+	$('.category').addClass('col-sm-3');
+	$('.school' + num).removeClass('col-sm-3');
+	$('.school' + num).addClass('col-sm-9');
+	$('#summary').addClass('col-sm-8');
+	// FIXME: Still able to click on not shown schools
 
 	// Generates summary based on selected school
-	let summary_string = "";
+	let summary_string = "<p>You chose school " + SCHOOL_NAMES[num] + ".</p>";
 	let chosen_school = SCHOOLS[num];
 	for (let i = 0; i < NUM_VALUE_CATEGORIES; i++) {
 		// For given category, if school is not equitable and the user valued equity in that category
