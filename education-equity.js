@@ -56,6 +56,8 @@ function showNextInstructions() {
 	$('#instructions').hide();
 	$('#intro_instructions_button').hide();
 	$('#value_statements').show();
+
+	$('body').css('background-image', 'none');
 }
 
 function showParentInstructions() {
