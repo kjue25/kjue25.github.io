@@ -4,8 +4,6 @@ html, body {
     background-repeat: no-repeat;
 	background-size: cover;
 }
-
-<<<<<<< HEAD
 .title{
 	color:black;
 	font-weight:bold;
@@ -20,12 +18,10 @@ html, body {
 	font-family: "verdana";
 	font-size: 100px;
 }
-=======
 #value_statements {
     display: none;
 }
 
->>>>>>> 8223116b6b555cae89108a39c5141b59339c9027
 .cell {
 	text-align: center;
 	font-family: "georgia";
