@@ -36,6 +36,10 @@ html, body {
 	font-family: "verdana";
 }
 
+.cell:hover {
+ background: #c06c84;
+}
+
 
 
 .overlay {
