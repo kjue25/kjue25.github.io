@@ -66,11 +66,12 @@ function showParentInstructions() {
 	$('#instructions').show();
 	$('#parent_instructions_button').show();
 	$('#value_statements').hide();
-	$('#instructions').text(INSTRUCTIONS[1]);
+	$('#instructions').html('<br><br><br><br><br><br><br><br>' + INSTRUCTIONS[1]);
+
 }
 
 function showSchoolInstructions() {
-	$('#instructions').text(INSTRUCTIONS[2]);
+	$('#instructions').html('<br><br><br><br><br><br><br><br>' + INSTRUCTIONS[2]);
 	$('#parent_instructions_button').hide();
 	$('#display_schools_button').show();
 }
