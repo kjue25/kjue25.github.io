@@ -54,6 +54,7 @@ function changePanels() {
 // and update the instructions div text
 function showNextInstructions() {
 	$('#instructions').hide();
+	$('#title').hide();
 	$('#intro_instructions_button').hide();
 	$('#value_statements').show();
 
