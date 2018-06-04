@@ -74,11 +74,12 @@ body {
 }
 
 #wrapper .btn{
+	display: none;
 	position: relative;
 	background-color: #355c7d;
 	color: white;
-	font-size: 12px;
-	border-radius: 12px;
+	font-size: 14px;
+	border-radius: 8px;
 	cursor: pointer;
 	padding: 12px 24px;
 	text-align: center;
