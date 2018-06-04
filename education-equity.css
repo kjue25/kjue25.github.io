@@ -1,9 +1,13 @@
 html, body {
 	height: 100%;
-	background-image: url("background.png");
     background-repeat: no-repeat;
 	background-size: cover;
 }
+
+body {
+    background-image: url("background.png");
+}
+
 .title{
 	color:black;
 	font-weight:bold;
@@ -18,6 +22,7 @@ html, body {
 	font-family: "verdana";
 	font-size: 25px;
 }
+
 #value_statements {
     display: none;
 }
