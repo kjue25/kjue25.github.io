@@ -113,10 +113,7 @@ function generateSchoolPropHtml(prop, data) {
 
 // Handles school selection
 function chooseSchool(num) {
-	// $('#instructions').show();
-	// $('#instructions').text("You chose school " + SCHOOL_NAMES[num]);
-
-	// Just hide the school columns you didn't choose
+	// Hide the school columns you didn't choose
 	for (let i = 0; i < SCHOOLS.length; i++) {
 		if (i !== num) {
 			$('.school' + i).hide();
@@ -129,6 +126,7 @@ function chooseSchool(num) {
 	$('.school' + num).removeClass('col-sm-3');
 	$('.school' + num).addClass('col-sm-9');
 	$('#summary').addClass('col-sm-7');
+	
 	// FIXME: Still able to click on not shown schools
 
 	// Generates summary based on selected school
@@ -146,6 +144,7 @@ function chooseSchool(num) {
 			for (let j = 0; j < properties.length; j++) {
 				if (properties[j]) {
 					summary_string += "<li>" + SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + ": " + chosen_school.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)) + "</li>";
+					// TODO: Also highlight the properties in the school column
 				}
 			}
 
@@ -155,6 +154,9 @@ function chooseSchool(num) {
 				summary_string += "<li>" + equitable_statements[i][j] + "</li>";
 			}
 			summary_string += "</ul>";
+
+			// TODO: ADD VERONICA SUMMARY INFO HERE FOR EACH CATEGORY
+			// Need to create data structures with summary statements from school to category
 		}
 	}
 
