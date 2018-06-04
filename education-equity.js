@@ -110,8 +110,8 @@ function generateSchoolPropHtml(prop, data) {
 
 // Handles school selection
 function chooseSchool(num) {
-	$('#instructions').show();
-	$('#instructions').text("You chose school " + SCHOOL_NAMES[num]);
+	// $('#instructions').show();
+	// $('#instructions').text("You chose school " + SCHOOL_NAMES[num]);
 	
 	// Just hide the school columns you didn't choose
 	for (let i = 0; i < SCHOOLS.length; i++) {
@@ -122,14 +122,14 @@ function chooseSchool(num) {
 
 	$('#schools').addClass('col-sm-4');
 	$('.category').removeClass('col-sm-3');
-	$('.category').addClass('col-sm-4');
+	$('.category').addClass('col-sm-3');
 	$('.school' + num).removeClass('col-sm-3');
-	$('.school' + num).addClass('col-sm-8');
+	$('.school' + num).addClass('col-sm-9');
 	$('#summary').addClass('col-sm-8');
-	// FIXME: Still to click on not shown schools
+	// FIXME: Still able to click on not shown schools
 
 	// Generates summary based on selected school
-	let summary_string = "";
+	let summary_string = "<p>You chose school " + SCHOOL_NAMES[num] + "</p>";
 	let chosen_school = SCHOOLS[num];
 	for (let i = 0; i < NUM_VALUE_CATEGORIES; i++) {
 		// For given category, if school is not equitable and the user valued equity in that category
