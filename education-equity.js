@@ -129,24 +129,25 @@ function chooseSchool(num) {
 	$('.school' + num).removeClass('col-sm-3');
 	$('.school' + num).addClass('col-sm-9');
 	$('#summary').addClass('col-sm-7');
-	
+
 	// FIXME: Still able to click on not shown schools
 
 	// Generates summary based on selected school
-	let summary_string = "<p>You chose school " + SCHOOL_NAMES[num] + ".</p>";
+	let summary_string = "<p class = 'title2'>You chose " + SCHOOL_NAMES[num] + ".</p>";
 	let chosen_school = SCHOOLS[num];
+	let text_color = ['#886A9E', '#c06c84', '#f67280', '#357BB3'];
 	for (let i = 0; i < NUM_VALUE_CATEGORIES; i++) {
 		// For given category, if school is not equitable and the user valued equity in that category
 		if (SCHOOL_EQUITY_CATEGORIES.get(chosen_school)[i] && (user_scores[i] > 0)) {
 			let category = CATEGORY_TO_INDEX_MAP.get(i);
-			summary_string += "<p>School " + (num+1) + " is inequitable in " + category;
+			summary_string += "<p>"+ SCHOOL_NAMES[num] + " is inequitable in <span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + category + "</span>";
 			summary_string += " because of the following properties: </p><ul>";
 
 			// Display school properties related to that category
 			let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
 			for (let j = 0; j < properties.length; j++) {
 				if (properties[j]) {
-					summary_string += "<li>" + SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + ": " + chosen_school.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)) + "</li>";
+					summary_string += "<li><span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + "</span>: " + chosen_school.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)) + "</li>";
 					// TODO: Also highlight the properties in the school column
 				}
 			}
@@ -156,7 +157,7 @@ function chooseSchool(num) {
 			for (let j = 0; j < equitable_statements[i].length; j++) {
 				summary_string += "<li>" + equitable_statements[i][j] + "</li>";
 			}
-			summary_string += "</ul>";
+			summary_string += "</ul><br><br><br>";
 
 			// TODO: ADD VERONICA SUMMARY INFO HERE FOR EACH CATEGORY
 			// Need to create data structures with summary statements from school to category
