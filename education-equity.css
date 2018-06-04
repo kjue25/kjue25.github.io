@@ -5,6 +5,10 @@ html, body {
 	background-size: cover;
 }
 
+#value_statements {
+    display: none;
+}
+
 .cell {
 	text-align: center;
 	font-family: "georgia";

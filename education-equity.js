@@ -15,7 +15,7 @@ let curr_panel_index = 0; // Index to track current value statement panel
 // Called at the start of the program to hide html elements
 function start() {
 	$('#instructions').text(INSTRUCTIONS[0]);
-	$('#value_statements').hide();
+	//$('#value_statements').hide();
 	$('#parent_instructions_button').hide();
 	$('#display_schools_button').hide();
 	$('.overlay-parent').hide();
