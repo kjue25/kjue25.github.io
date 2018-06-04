@@ -122,12 +122,12 @@ function chooseSchool(num) {
 		}
 	}
 
-	$('#schools').addClass('col-sm-4');
+	$('#schools').addClass('col-sm-5');
 	$('.category').removeClass('col-sm-3');
 	$('.category').addClass('col-sm-3');
 	$('.school' + num).removeClass('col-sm-3');
 	$('.school' + num).addClass('col-sm-9');
-	$('#summary').addClass('col-sm-8');
+	$('#summary').addClass('col-sm-7');
 	// FIXME: Still able to click on not shown schools
 
 	// Generates summary based on selected school
