@@ -117,6 +117,8 @@ function chooseSchool(num) {
 	for (let i = 0; i < SCHOOLS.length; i++) {
 		if (i !== num) {
 			$('.school' + i).hide();
+		} else {
+			$('.school' + i).show();
 		}
 	}
 
