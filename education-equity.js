@@ -157,7 +157,7 @@ function showChoiceValueConflicts(school_property) {
 	let prop_string = school_property.replace(" ", "_");
 	if (!$('#' + prop_string + '_button').hasClass('pressed-school-prop')) {
 
-		// De-select any currently selecting buttons
+		// De-select
 		SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
 			let related_prop_string = prop.replace(" ", "_");
 			$('#' + related_prop_string + '_button').removeClass('pressed-school-prop');
@@ -190,7 +190,7 @@ function showChoiceValueConflicts(school_property) {
 
 		$('#equity-summary-text').html(summary_string);
 	} else {
-		// De-select any currently selecting buttons
+		// De-select currently selected button(s)
 		SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
 			let related_prop_string = prop.replace(" ", "_");
 			$('#' + related_prop_string + '_button').removeClass('pressed-school-prop');
