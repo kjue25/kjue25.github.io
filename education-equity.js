@@ -187,6 +187,13 @@ function showChoiceValueConflicts(school_property) {
 	$('#equity-summary-text').html(summary_string);
 }
 
+function goToConclusion() {
+	$('#summary').hide();
+	$('#title').show();
+	$('#instructions').html(INSTRUCTIONS[3]);
+	$('body').css('background-image', 'background.png');
+}
+
 window.onload = function(){
 	start();
 };
