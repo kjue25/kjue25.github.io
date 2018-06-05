@@ -246,6 +246,7 @@ body {
     padding: 20px;
     color: white;
     width: 100%;
+    text-align: center;
 }
 
 .value-statement-right:after {
@@ -261,4 +262,8 @@ body {
     border-left: 0;
     margin-left: -16.5px;
     margin-bottom: -33px;
+}
+
+#school_name {
+    text-align: center;
 }
