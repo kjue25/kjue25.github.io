@@ -101,8 +101,10 @@ function displaySchools() {
 	$('#title').hide();
 	$('body').css('background-image', 'none');
 	$('#schools').show();
-	// var accs = document.getElementsByClassName("accordion");
-	// accs[0].click();
+	var acc1 = $(".accordion")[0];
+	if (typeof(acc1) !== "undefined")  {
+		acc1.click();
+	}
 }
 
 // Generates school table from school maps
