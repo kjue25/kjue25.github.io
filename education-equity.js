@@ -106,7 +106,6 @@ function insertSchoolData() {
 // Updates html from schools-display.html for each school property
 function generateSchoolPropHtml(prop, data) {
 	data = data.replace("School Name", prop);
-	data = data.replace("Washington Elementary", SCHOOL1.get(prop));
 	data = data.replace("Lincoln Elementary", SCHOOL2.get(prop));
 	data = data.replace("Stony Brook Elementary", SCHOOL3.get(prop));
 	return data;
@@ -157,10 +156,10 @@ function chooseSchool(num) {
 			for (let j = 0; j < equitable_statements[i].length; j++) {
 				summary_string += "<li>" + equitable_statements[i][j] + "</li>";
 			}
+			school_summary = CATEGORY_TO_SUMMARY.get(num);
+			console.log(school_summary);
+			summary_string += "</ul><p>" + school_summary[i] + "</li>";
 			summary_string += "</ul><br><br><br>";
-
-			// TODO: ADD VERONICA SUMMARY INFO HERE FOR EACH CATEGORY
-			// Need to create data structures with summary statements from school to category
 		}
 	}
 
