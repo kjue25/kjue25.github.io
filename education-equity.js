@@ -142,6 +142,10 @@ function chooseSchool(num) {
 		if (SCHOOL_EQUITY_CATEGORIES.get(chosen_school)[category_index] && (user_scores[category_index] > 0)) {
 			// Enable button
 			button = prop.replace(" ", "_");
+			$("#" + button + "_button").attr('style', function(i, style) {
+    			return style && style.replace(/background-color[^;]+;?/g, '');
+			});
+			$("#" + button + "_button").addClass('custom-btn');
 			$("#" + button + "_button").prop('disabled', false);
 		}
 	});

@@ -249,7 +249,7 @@ body {
 }
 
 .value-statement-right:after {
-content: '';
+    content: '';
     position: absolute;
     bottom: 0;
     left: 30%;
