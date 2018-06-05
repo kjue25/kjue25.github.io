@@ -237,3 +237,7 @@ body {
 .row-values { 
 	min-height:100vh; 
 }
+
+.pressed-school-prop {
+    background-color: black;
+}

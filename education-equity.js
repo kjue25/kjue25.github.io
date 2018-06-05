@@ -107,34 +107,6 @@ function displaySchools() {
 	}
 }
 
-// Generates school table from school maps
-function insertSchoolData() {
-	SCHOOL1.forEach(function(value, key, map) {
-		// Generate HTML string for each row
-		$.get("schools-display.html", function(data){
-			let row_html = generateSchoolPropHtml(key, data);
-			$("#schools").append(row_html);
-		});
-	});
-
-	// Use overlay spans to select a school
-	$('.overlay-parent').show();
-	$('#school1-overlay').css('display', 'block');
-	$('#school2-overlay').css('display', 'block');
-	$('#school3-overlay').css('display', 'block');
-}
-
-// Called by insertSchoolData()
-// Updates html from schools-display.html for each school property
-function generateSchoolPropHtml(prop, data) {
-	data = data.replace("School Name", prop);
-	data = data.replace("Lincoln Elementary", SCHOOL2.get(prop));
-	data = data.replace("Stony Brook Elementary", SCHOOL3.get(prop));
-	return data;
-}
- 
- let chosenSchool = ""
-
 let chosen_school = "";
 // Handles school selection
 function chooseSchool(num) {
@@ -164,7 +136,6 @@ function chooseSchool(num) {
 	$('#supplemental_programs_button').show();
 	$('#class_size_button').show();
 	$('#school_size_button').show();
-	$('#equity-summary').show();
 
 	console.log("before loop");
 
@@ -179,6 +150,15 @@ function chooseSchool(num) {
 }
 
 function showChoiceValueConflicts(schoolProperty) {
+
+	SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
+		let related_prop_string = prop.replace(" ", "_");
+		$('#' + related_prop_string + '_button').removeClass('pressed-school-prop');
+	});
+
+	let prop_string = schoolProperty.replace(" ", "_");
+	console.log(prop_string);
+	$('#' + prop_string + '_button').addClass('pressed-school-prop');
 	// Generates summary based on selected school and schoolProperty
 	let category_index = SCHOOL_PROPERTY_TO_CATEGORY_MAP.get(schoolProperty);
 	let category = CATEGORY_TO_INDEX_MAP.get(category_index);
@@ -190,7 +170,8 @@ function showChoiceValueConflicts(schoolProperty) {
 	let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
 	for (let i = 0; i < properties.length; i++) {
 		if (properties[i]) {
-			// SELECT BUTTON ON THE RHS
+			let related_prop_string = SCHOOL_PROPERTY_TO_INDEX_MAP.get(i).replace(" ", "_");
+			$('#' + related_prop_string + '_button').addClass('pressed-school-prop');
 		}
 	}
 
