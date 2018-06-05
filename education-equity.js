@@ -151,7 +151,6 @@ function chooseSchool(num) {
 	$('#supplemental_programs_button').show();
 	$('#class_size_button').show();
 	$('#school_size_button').show();
-	$('#equity-summary').show();
 
 	chosen_school = SCHOOLS[num];
 	
@@ -164,6 +163,15 @@ function chooseSchool(num) {
 }
 
 function showChoiceValueConflicts(schoolProperty) {
+
+	SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
+		let related_prop_string = prop.replace(" ", "_");
+		$('#' + related_prop_string + '_button').removeClass('pressed-school-prop');
+	});
+
+	let prop_string = schoolProperty.replace(" ", "_");
+	console.log(prop_string);
+	$('#' + prop_string + '_button').addClass('pressed-school-prop');
 	// Generates summary based on selected school and schoolProperty
 	let category_index = SCHOOL_PROPERTY_TO_CATEGORY_MAP.get(schoolProperty);
 	let category = CATEGORY_TO_INDEX_MAP.get(category_index);
@@ -175,7 +183,8 @@ function showChoiceValueConflicts(schoolProperty) {
 	let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
 	for (let i = 0; i < properties.length; i++) {
 		if (properties[i]) {
-			// SELECT BUTTON ON THE RHS
+			let related_prop_string = SCHOOL_PROPERTY_TO_INDEX_MAP.get(i).replace(" ", "_");
+			$('#' + related_prop_string + '_button').addClass('pressed-school-prop');
 		}
 	}
 
