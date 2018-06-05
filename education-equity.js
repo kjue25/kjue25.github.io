@@ -160,19 +160,18 @@ function showChoiceValueConflicts(schoolProperty) {
 
 	// Highlight the school properties related to the associated category
 	let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
-	for (let j = 0; j < properties.length; j++) {
-		if (properties[j]) {
+	for (let i = 0; i < properties.length; i++) {
+		if (properties[i]) {
 			// SELECT BUTTON ON THE RHS
-			summary_string += "<li><span style=\"font-weight:bold;color:" + text_color[category_index%4] + "\">" + SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + "</span>: " + chosen_school.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)) + "</li>";
 		}
 	}
 
 	// Display selected equity value statements related to that category
 	summary_string += "</ul><p>This conflicts with your chosen values: </p><ul>";
-	for (let j = 0; j < equitable_statements[category_index].length; j++) {
-		summary_string += "<li>" + equitable_statements[category_index][j] + "</li>";
+	for (let i = 0; i < equitable_statements[category_index].length; i++) {
+		summary_string += "<li>" + equitable_statements[category_index][i] + "</li>";
 	}
-	school_summary = CATEGORY_TO_SUMMARY.get(2);
+	school_summary = CATEGORY_TO_SUMMARY.get(chosen_school);
 	console.log(school_summary);
 	summary_string += "</ul><p>" + school_summary[category_index] + "</li>";
 	summary_string += "</ul><br><br><br>";
