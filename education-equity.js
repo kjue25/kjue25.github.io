@@ -138,10 +138,23 @@ function generateSchoolPropHtml(prop, data) {
 let chosen_school = "";
 // Handles school selection
 function chooseSchool(num) {
+	chosen_school = SCHOOLS[num];
 	let chosen_school_string = "class = 'title2'>You chose " + SCHOOL_NAMES[num] + ".</p>";
 	$('#school_name').html(SCHOOL_NAMES[num])
 	$('#schools').hide();
 	$('#summary').show();
+
+	$('#school_type').html(chosen_school.get('school type'));
+	$('#demographics').html(chosen_school.get('demographics'));
+	$('#discipline').html(chosen_school.get('discipline'));
+	$('#academics').html(chosen_school.get('academics'));
+	$('#tracking').html(chosen_school.get('tracking'));
+	$('#support_programs').html(chosen_school.get('support programs'));
+	$('#supplemental_programs').html(chosen_school.get('supplemental programs'));
+	$('#class_size').html(chosen_school.get('class size'));
+	$('#school_size').html(chosen_school.get('school size'));
+
+
 	$('#school_type_button').show();
 	$('#demographics_button').show();
 	$('#discipline_button').show();
@@ -153,12 +166,14 @@ function chooseSchool(num) {
 	$('#school_size_button').show();
 	$('#equity-summary').show();
 
-	chosen_school = SCHOOLS[num];
-	
+	console.log("before loop");
+
 	SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
 		// For given category, if school is not equitable and the user valued equity in that category
 		if (SCHOOL_EQUITY_CATEGORIES.get(chosen_school)[category_index] && (user_scores[category_index] > 0)) {
 			// Enable button
+			button = prop.replace(" ", "_");
+			$("#" + button + "_button").prop('disabled', false);
 		}
 	});
 }
