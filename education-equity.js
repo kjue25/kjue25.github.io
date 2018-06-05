@@ -192,6 +192,8 @@ function goToConclusion() {
 	$('#summary').hide();
 	$('#title').show();
 	$('#instructions').html(INSTRUCTIONS[3]);
+	$('#display_schools_button').hide();
+	$('#refresh_button').show();
 	$('body').css('background-image', 'background.png');
 }
 
