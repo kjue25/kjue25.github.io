@@ -16,7 +16,7 @@ let curr_panel_index = 0; // Index to track current value statement panel
 function start() {
 	$('#title').show();
 	$('#instructions').html(INSTRUCTIONS[0]);
-    $('#first_intro_button').css('display', 'block');
+    $('#first_intro_button').show();
 	$('#intro_instructions_button').show();
 	$('#display_schools_button').hide();
 	$('.overlay-parent').hide();
@@ -113,65 +113,84 @@ function generateSchoolPropHtml(prop, data) {
 	data = data.replace("Stony Brook Elementary", SCHOOL3.get(prop));
 	return data;
 }
+ 
+ let chosenSchool = ""
 
 // Handles school selection
 function chooseSchool(num) {
+	let chosen_school_string = "class = 'title2'>You chose " + SCHOOL_NAMES[num] + ".</p>";
+	$('#school_name').html(SCHOOL_NAMES[num])
+	$('#summary').show();
+	$('#school_type_button').show();
+	$('#demographics_button').show();
+	$('#discipline_button').show();
+	$('#academics_button').show();
+	$('#tracking_button').show();
+	$('#support_programs_button').show();
+	$('#supplemental_programs_button').show();
+	$('#class_size_button').show();
+	$('#school_size_button').show();
+	choseSchool = SCHOOLS[num];
+}
 
+function showChoiceValueConflicts(school, schoolProperty) {
+
+}
 
 	
 
-	// Hide the school columns you didn't choose
-	for (let i = 0; i < SCHOOLS.length; i++) {
-		if (i !== num) {
-			$('.school' + i).hide();
-		} else {
-			$('.school' + i).show();
-		}
-	}
+// 	// Hide the school columns you didn't choose
+// 	for (let i = 0; i < SCHOOLS.length; i++) {
+// 		if (i !== num) {
+// 			$('.school' + i).hide();
+// 		} else {
+// 			$('.school' + i).show();
+// 		}
+// 	}
 
-	$('#schools').addClass('col-sm-5');
-	$('.category').removeClass('col-sm-3');
-	$('.category').addClass('col-sm-3');
-	$('.school' + num).removeClass('col-sm-3');
-	$('.school' + num).addClass('col-sm-9');
-	$('#summary').addClass('col-sm-7');
+// 	$('#schools').addClass('col-sm-5');
+// 	$('.category').removeClass('col-sm-3');
+// 	$('.category').addClass('col-sm-3');
+// 	$('.school' + num).removeClass('col-sm-3');
+// 	$('.school' + num).addClass('col-sm-9');
+// 	$('#summary').addClass('col-sm-7');
 
-	// FIXME: Still able to click on not shown schools
+// 	// FIXME: Still able to click on not shown schools
 
-	// Generates summary based on selected school
-	let summary_string = "<p class = 'title2'>You chose " + SCHOOL_NAMES[num] + ".</p>";
-	let chosen_school = SCHOOLS[num];
-	let text_color = ['#886A9E', '#c06c84', '#f67280', '#357BB3'];
-	for (let i = 0; i < NUM_VALUE_CATEGORIES; i++) {
-		// For given category, if school is not equitable and the user valued equity in that category
-		if (SCHOOL_EQUITY_CATEGORIES.get(chosen_school)[i] && (user_scores[i] > 0)) {
-			let category = CATEGORY_TO_INDEX_MAP.get(i);
-			summary_string += "<p>"+ SCHOOL_NAMES[num] + " is inequitable in <span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + category + "</span>";
-			summary_string += " because of the following properties: </p><ul>";
+// 	// Generates summary based on selected school
+// 	let summary_string = "<p class = 'title2'>You chose " + SCHOOL_NAMES[num] + ".</p>";
+// 	let chosen_school = SCHOOLS[num];
+// 	let text_color = ['#886A9E', '#c06c84', '#f67280', '#357BB3'];
+// 	for (let i = 0; i < NUM_VALUE_CATEGORIES; i++) {
+// 		// For given category, if school is not equitable and the user valued equity in that category
+// 		if (SCHOOL_EQUITY_CATEGORIES.get(chosen_school)[i] && (user_scores[i] > 0)) {
+// 			let category = CATEGORY_TO_INDEX_MAP.get(i);
+// 			summary_string += "<p>"+ SCHOOL_NAMES[num] + " is inequitable in <span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + category + "</span>";
+// 			summary_string += " because of the following properties: </p><ul>";
 
-			// Display school properties related to that category
-			let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
-			for (let j = 0; j < properties.length; j++) {
-				if (properties[j]) {
-					summary_string += "<li><span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + "</span>: " + chosen_school.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)) + "</li>";
-					// TODO: Also highlight the properties in the school column
-				}
-			}
+// 			// Display school properties related to that category
+// 			let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
+// 			for (let j = 0; j < properties.length; j++) {
+// 				if (properties[j]) {
+// 					summary_string += "<li><span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + "</span>: " + chosen_school.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)) + "</li>";
+// 					// TODO: Also highlight the properties in the school column
+// 				}
+// 			}
 
-			// Display selected equity value statements related to that category
-			summary_string += "</ul><p>This conflicts with your chosen values: </p><ul>";
-			for (let j = 0; j < equitable_statements[i].length; j++) {
-				summary_string += "<li>" + equitable_statements[i][j] + "</li>";
-			}
-			school_summary = CATEGORY_TO_SUMMARY.get(num);
-			console.log(school_summary);
-			summary_string += "</ul><p>" + school_summary[i] + "</li>";
-			summary_string += "</ul><br><br><br>";
-		}
-	}
+// 			// Display selected equity value statements related to that category
+// 			summary_string += "</ul><p>This conflicts with your chosen values: </p><ul>";
+// 			for (let j = 0; j < equitable_statements[i].length; j++) {
+// 				summary_string += "<li>" + equitable_statements[i][j] + "</li>";
+// 			}
+// 			school_summary = CATEGORY_TO_SUMMARY.get(num);
+// 			console.log(school_summary);
+// 			summary_string += "</ul><p>" + school_summary[i] + "</li>";
+// 			summary_string += "</ul><br><br><br>";
+// 		}
+// 	}
 
-	$('#summary').html(summary_string);
-}
+// 	$('#summary').html(summary_string);
+// }
 
 window.onload = function(){
 	start();
