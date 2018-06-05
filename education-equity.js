@@ -136,6 +136,7 @@ function chooseSchool(num) {
 	$('#supplemental_programs_button').show();
 	$('#class_size_button').show();
 	$('#school_size_button').show();
+	$('#conclusion-button').show();
 
 	SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
 		// For given category, if school is not equitable and the user valued equity in that category
