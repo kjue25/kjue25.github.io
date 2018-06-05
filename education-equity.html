@@ -37,14 +37,14 @@
 		<div class="container cell">
 		  <div class="row row-values">
 		    <div class="col-sm">
-		      <hgroup class="speech-bubble-left" onclick="next(0);">
-				<p id="left_panel">I believe all students in a classroom should receive equal attention from the teacher.</p>
-			</hgroup>
+		    	<hgroup class="speech-bubble-left" onclick="next(0);">
+					<p id="left_panel">I believe all students in a classroom should receive equal attention from the teacher.</p>
+				</hgroup>
 		    </div>
 		    <div class="col-sm">
-		      <hgroup class="speech-bubble-right" onclick="next(1);">
-				<p id="right_panel" >I believe students who are struggling should receive more attention from the teacher.</p>
-			</hgroup>
+		    	<hgroup class="speech-bubble-right" onclick="next(1);">
+					<p id="right_panel" >I believe students who are struggling should receive more attention from the teacher.</p>
+				</hgroup>
 		    </div>
 		  </div>
 		</div>
@@ -220,7 +220,7 @@
 		</div>
 	</div>
 
-	<div id="summary" class="col-sm-12" style="display: none;">
+	<div id="summary" class="row col-sm-12" style="display: none;">
 		<div id="chosen-school" class="col-sm-5">
 			<div class="card">
 		  		<div class="card-body">
@@ -257,8 +257,12 @@
 				</div>
 			</div>
 		</div>
-		<div id="equity-summary" class="col-sm-7 rounded-custom card">
-			Click on a highlighted property to see where your values don't align with the school you chose.
+		<div id="equity-summary" class="col-sm-7 float-right">
+			<div class="card">
+				<div id="equity-summary-text" class="card-body">
+					Click on a highlighted property to see where your values don't align with the school you chose.
+				</div>
+			</div>
 		</div>
 	</div>
 

@@ -134,18 +134,17 @@ function chooseSchool(num) {
 	});
 }
 
-function showChoiceValueConflicts(schoolProperty) {
+function showChoiceValueConflicts(school_property) {
 
 	SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
 		let related_prop_string = prop.replace(" ", "_");
 		$('#' + related_prop_string + '_button').removeClass('pressed-school-prop');
 	});
 
-	let prop_string = schoolProperty.replace(" ", "_");
-	console.log(prop_string);
+	let prop_string = school_property.replace(" ", "_");
 	$('#' + prop_string + '_button').addClass('pressed-school-prop');
-	// Generates summary based on selected school and schoolProperty
-	let category_index = SCHOOL_PROPERTY_TO_CATEGORY_MAP.get(schoolProperty);
+	// Generates summary based on selected school and school_property
+	let category_index = SCHOOL_PROPERTY_TO_CATEGORY_MAP.get(school_property);
 	let category = CATEGORY_TO_INDEX_MAP.get(category_index);
 	
 	let text_color = ['#886A9E', '#c06c84', '#f67280', '#357BB3'];
@@ -161,16 +160,14 @@ function showChoiceValueConflicts(schoolProperty) {
 	}
 
 	// Display selected equity value statements related to that category
-	summary_string += "</ul><p>This conflicts with your chosen values: </p><ul>";
+	summary_string += "<p>This conflicts with your chosen values: </p>";
 	for (let i = 0; i < equitable_statements[category_index].length; i++) {
-		summary_string += "<li>" + equitable_statements[category_index][i] + "</li>";
+		summary_string += "<hgroup class='value-statement-right'>" + equitable_statements[category_index][i] + "</hgroup><br/><br/>";
 	}
 	school_summary = CATEGORY_TO_SUMMARY.get(chosen_school);
-	console.log(school_summary);
-	summary_string += "</ul><p>" + school_summary[category_index] + "</li>";
-	summary_string += "</ul><br><br><br>";
+	summary_string += "<p>" + school_summary[category_index] + "</p>";
 
-	$('#equity-summary').html(summary_string);
+	$('#equity-summary-text').html(summary_string);
 }
 
 window.onload = function(){
