@@ -14,11 +14,12 @@ let curr_panel_index = 0; // Index to track current value statement panel
 
 // Called at the start of the program to hide html elements
 function start() {
-	$('#instructions').text(INSTRUCTIONS[0]);
+	$('#instructions').html(INSTRUCTIONS[0]);
 	$('#intro_instructions_button').show();
 	$('#parent_instructions_button').hide();
 	$('#display_schools_button').hide();
 	$('.overlay-parent').hide();
+	$('#intro_instructions_button').hide();
 }
 
 // Called each time the user selects a value statement
@@ -53,8 +54,15 @@ function changePanels() {
 // there's probably a better way to do this than three separate buttons
 // The following four button functions show and hide the relevant instruction buttons
 // and update the instructions div text
+function showSecondIntro() {
+	$('#instructions').html(INSTRUCTIONS[1]);
+	$('#first_intro_button').hide();
+	$('#intro_instructions_button').show();
+
+}
+
+
 function showNextInstructions() {
-	$('#instructions').hide();
 	$('#title').hide();
 	$('#intro_instructions_button').hide();
 	$('#value_statements').show();
@@ -63,23 +71,17 @@ function showNextInstructions() {
 }
 
 function showParentInstructions() {
-	$('#instructions').show();
-	$('#parent_instructions_button').show();
-	$('#value_statements').hide();
-	$('#instructions').html('<br><br><br><br><br><br><br><br>' + INSTRUCTIONS[1]);
-
-}
-
-function showSchoolInstructions() {
-	$('#instructions').html('<br><br><br><br><br><br><br><br>' + INSTRUCTIONS[2]);
-	$('#parent_instructions_button').hide();
+	$('#title').show();
 	$('#display_schools_button').show();
+	$('#value_statements').hide();
+	$('#instructions').html(INSTRUCTIONS[2]);
+	$('body').css('background-image', 'background.png');
 }
 
 // Displays school table using the schools-display.html template
 function displaySchools() {
-	$('#instructions').hide();
-	$('#display_schools_button').hide();
+	$('#title').hide();
+	$('body').css('background-image', 'none');
 	$("#schools").load("schools-display.html", function() {
 		insertSchoolData();
 	});

@@ -1,6 +1,4 @@
-let INSTRUCTIONS = ["For the following questions, choose the option which best describes your beliefs and values.",
-					"Now, imagine you are a parent with a child who is about to start school for the first time.",
-					"You are trying to choose a school for your child and have a few options."];
+let INSTRUCTIONS = ["</br>\"Education is the most powerful weapon which you can use to change the world.\" - Nelson Mandela <br/><br/> This explorable explanation aims to help you better understand issues in education while also encouraging you to think about your beliefs.<br/> ", "In the following section, please choose the option that best matches your values for the education system. <br/><br/>There are no “right” choices or “wrong” choices, and you may not always fall exactly on one side or the other. However, the binary decisions reflect difficult tradeoffs that you may face in the real world. <br/><br/>Are you ready?", "Now, imagine you are a parent with a child who is about to start elementary school for the first time. </br> </br> You are trying to choose an elementary school for your child and have a few options."];
 
 let VALUE_STATEMENTS = [["I believe all students in a classroom should receive equal attention from the teacher.", "I believe students who are struggling should receive more attention from the teacher."],
 						["I believe schools should have different classes for advanced and underperforming students.", "I believe that students should be in heterogeneous classrooms that cater to all abilities."],
