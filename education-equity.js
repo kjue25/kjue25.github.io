@@ -115,6 +115,7 @@ function chooseSchool(num) {
 	$('#school_name').html(SCHOOL_NAMES[num])
 	$('#schools').hide();
 	$('#summary').show();
+	$('body').css('background-color', '#fcf3ef');
 
 	$('#school_type').html(chosen_school.get('school type'));
 	$('#demographics').html(chosen_school.get('demographics'));
@@ -196,11 +197,12 @@ function showChoiceValueConflicts(school_property) {
 			$('#' + related_prop_string + '_button').removeClass('pressed-school-prop');
 		});
 
-		$('#equity-summary-text').html("Click on a highlighted property to the left to see where the school you chose doesn't align with your original values.");
+		$('#equity-summary-text').html("Click on a pink highlighted property to the left to see where the school you chose doesn't align with your original values.");
 	}
 }
 
 function goToConclusion() {
+	$('body').css('background-color', '#ffffff');
 	$('#summary').hide();
 	$('#title').show();
 	$('#instructions').html(INSTRUCTIONS[3]);
