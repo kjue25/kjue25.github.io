@@ -159,7 +159,6 @@ function chooseSchool(num) {
 		// For given category, if school is not equitable and the user valued equity in that category
 		if (SCHOOL_EQUITY_CATEGORIES.get(chosen_school)[category_index] && (user_scores[category_index] > 0)) {
 			// Enable button
-			showChoiceValueConflicts(prop); // REMOVE THIS ONCE chooseSchool is implemented
 		}
 	});
 }
