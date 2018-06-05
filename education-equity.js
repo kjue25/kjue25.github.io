@@ -14,9 +14,10 @@ let curr_panel_index = 0; // Index to track current value statement panel
 
 // Called at the start of the program to hide html elements
 function start() {
+	$('#title').show();
 	$('#instructions').html(INSTRUCTIONS[0]);
+    $('#first_intro_button').css('display', 'block');
 	$('#intro_instructions_button').show();
-	$('#parent_instructions_button').hide();
 	$('#display_schools_button').hide();
 	$('.overlay-parent').hide();
 	$('#intro_instructions_button').hide();
@@ -125,7 +126,6 @@ function insertSchoolData() {
 // Updates html from schools-display.html for each school property
 function generateSchoolPropHtml(prop, data) {
 	data = data.replace("School Name", prop);
-	data = data.replace("Washington Elementary", SCHOOL1.get(prop));
 	data = data.replace("Lincoln Elementary", SCHOOL2.get(prop));
 	data = data.replace("Stony Brook Elementary", SCHOOL3.get(prop));
 	return data;
@@ -133,7 +133,6 @@ function generateSchoolPropHtml(prop, data) {
 
 // Handles school selection
 function chooseSchool(num) {
-
 	$('#schools').hide();
 	// Hide the school columns you didn't choose
 	for (let i = 0; i < SCHOOLS.length; i++) {
@@ -178,10 +177,10 @@ function chooseSchool(num) {
 			for (let j = 0; j < equitable_statements[i].length; j++) {
 				summary_string += "<li>" + equitable_statements[i][j] + "</li>";
 			}
+			school_summary = CATEGORY_TO_SUMMARY.get(num);
+			console.log(school_summary);
+			summary_string += "</ul><p>" + school_summary[i] + "</li>";
 			summary_string += "</ul><br><br><br>";
-
-			// TODO: ADD VERONICA SUMMARY INFO HERE FOR EACH CATEGORY
-			// Need to create data structures with summary statements from school to category
 		}
 	}
 

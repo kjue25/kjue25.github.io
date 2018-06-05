@@ -23,9 +23,11 @@
 		  <div class="card-body">
 		  	  <p id="instructions" class="card-text"></p>
 		  	  <div id="intro-wrapper"> 
-		  	  	<button class="btn custom-btn" id="first_intro_button" onclick="showSecondIntro();">Continue</button> 
-		  	  	<button class="btn custom-btn" id="intro_instructions_button" onclick="showNextInstructions();">Ready!</button> 
-				<button class="btn custom-btn" id="display_schools_button" onclick="displaySchools()">Let's see.</button>
+
+		  	  	<button class="custom-btn btn" style="display: none;" id="first_intro_button" onclick="showSecondIntro();">Continue</button> 
+
+		  	  	<button class="custom-btn btn" style="display: none;" id="intro_instructions_button" onclick="showNextInstructions();">Ready!</button> 
+				<button class="custom-btn btn" style="display: none;" id="display_schools_button" onclick="displaySchools()">Let's see.</button>
 		  	  </div>
 		  </div>
 		</div>
@@ -218,7 +220,12 @@
 		</div>
 	</div>
 
-	<div id="summary"></div>
+	<div id="summary" class="col-sm-12">
+		<div id="chosen-school" class="col-sm-5">
+		</div>
+		<div id="equity-summary" class="col-sm-7">
+		</div>
+	</div>
 
 </body>
 
