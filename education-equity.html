@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="education-equity.css">
 	<link rel="stylesheet" href="bootstrap.css">
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script type="text/javascript" src="education-equity-constants.js"></script>
 	<script type="text/javascript" src="education-equity.js"></script>
@@ -24,7 +24,6 @@
 		  	  <p id="instructions" class="card-text"></p>
 		  	  <div id="intro-wrapper"> 
 		  	  	<button class="btn custom-btn" id="first_intro_button" onclick="showSecondIntro();">Continue</button> 
-
 		  	  	<button class="btn custom-btn" id="intro_instructions_button" onclick="showNextInstructions();">Ready!</button> 
 				<button class="btn custom-btn" id="display_schools_button" onclick="displaySchools()">Let's see.</button>
 		  	  </div>
@@ -33,29 +32,194 @@
 	</div>
 
 	<span id="value_statements">
-		<span  class="cell col-sm-5 col-sm-offset-1">
-			<hgroup class="speech-bubble-left" onclick="next(0);">
+		<div class="container cell">
+		  <div class="row row-values">
+		    <div class="col-sm">
+		      <hgroup class="speech-bubble-left" onclick="next(0);">
 				<p id="left_panel">I believe all students in a classroom should receive equal attention from the teacher.</p>
 			</hgroup>
-		</span>
-		<span class="cell col-sm-5">
-			<hgroup class="speech-bubble-right" onclick="next(1);">
+		    </div>
+		    <div class="col-sm">
+		      <hgroup class="speech-bubble-right" onclick="next(1);">
 				<p id="right_panel" >I believe students who are struggling should receive more attention from the teacher.</p>
 			</hgroup>
-		</span>
+		    </div>
+		  </div>
+		</div>
 	</span>
 
 
-	<div id="schools"></div>
+	<div id="schools" style="background-color:#fcf3ef;" > 
+		<div class="container schools-table">
+		  <div class="row">
+		    <div class="col-sm school-col school-names">
+		      <button class="btn custom-btn" id="wash_button" onclick="chooseSchool(0);"><strong>Washington Elementary</strong></button>
+		    </div>
+		    <div class="col-sm school-col school-names">
+		      <button class="btn custom-btn" id="linc_button" onclick="chooseSchool(1);"><strong>Lincoln Elementary</strong></button>
+		    </div>
+		    <div class="col-sm school-col school-names">
+		      <button class="btn custom-btn" id="stony_button" onclick="chooseSchool(2);"><strong>Stony Brook Elementary</strong></button>
+		    </div>
+		  </div>
+		</div>
+
+		<button class="accordion">School type</button>
+		<div class="panel schools-table">
+			<div class="container schools-table">
+			  <div class="row">
+			    <div class="col-sm school-col">
+			      Public school
+			    </div>
+			    <div class="col-sm school-col">
+			      Public charter school with private K to guarantee admission
+			    </div>
+			    <div class="col-sm school-col">
+			      Private school with sufficient need-based financial aid to support your family.
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<button class="accordion">School demographics</button>
+		<div class="panel schools-table">
+			<div class="container schools-table">
+			  <div class="row">
+			    <div class="col-sm school-col">
+			      Majority Asian and white students, with 10% black and Latinx students
+			    </div>
+			    <div class="col-sm school-col">
+			      Majority black and Latinx students
+			    </div>
+			    <div class="col-sm school-col">
+			      Majority white students, with 2% black and Latinx students
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<button class="accordion">Discipline</button>
+		<div class="panel schools-table">
+			<div class="container schools-table">
+			  <div class="row">
+			    <div class="col-sm school-col">
+			      Students cannot be suspended; instead, they are required to attend counseling services.
+			    </div>
+			    <div class="col-sm school-col">
+			      Disciplinary process includes meetings with parents and staff process; suspension occurs after third disciplinary infraction.
+			    </div>
+			    <div class="col-sm school-col">
+			      Disciplinary process includes meetings with parents and staff, and suspension as a last resort.
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<button class="accordion">Academics</button>
+		<div class="panel schools-table">
+			<div class="container schools-table">
+			  <div class="row">
+			    <div class="col-sm school-col">
+			      Below average test scores
+			    </div>
+			    <div class="col-sm school-col">
+			      Average test scores
+			    </div>
+			    <div class="col-sm school-col">
+			      Above average test scores
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<button class="accordion">Tracking</button>
+		<div class="panel schools-table">
+			<div class="container schools-table">
+			  <div class="row">
+			    <div class="col-sm school-col">
+			      After 1st grade, students are separated into classes based on academic performance; students can switch tracks each year given standardized test performance.
+			    </div>
+			    <div class="col-sm school-col">
+			      Students are primarily randomly assigned; gifted ed program can be tested into.
+			    </div>
+			    <div class="col-sm school-col">
+			      Students are randomly assigned to classes.
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<button class="accordion">Support programs</button>
+		<div class="panel schools-table">
+			<div class="container schools-table">
+			  <div class="row">
+			    <div class="col-sm school-col">
+			      Provides bare minimum for legally required support services, such as mental and physical health counseling and disability accommodations. There is one counselor for the entire school.
+			    </div>
+			    <div class="col-sm school-col">
+			      Good quality support services, such as mental and physical health counseling and disability accommodations. There are 4 school counselors.
+			    </div>
+			    <div class="col-sm school-col">
+			      High quality support services, such as mental and physical health counseling and disability accommodations. There is a specialized team of 10 support personnel who provide hyper individualized care for each student.
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<button class="accordion">Supplemental programs</button>
+		<div class="panel schools-table">
+			<div class="container schools-table">
+			  <div class="row">
+			    <div class="col-sm school-col">
+			      No organized art or music program.
+			    </div>
+			    <div class="col-sm school-col">
+			      After school music lessons that parents can opt in and pay for.
+			    </div>
+			    <div class="col-sm school-col">
+			      Has arts and music program with specialized facilities and instructors.
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<button class="accordion">Class size</button>
+		<div class="panel schools-table">
+			<div class="container schools-table">
+			  <div class="row">
+			    <div class="col-sm school-col">
+			      20-25 students / teacher
+			    </div>
+			    <div class="col-sm school-col">
+			      25+ students / teacher
+			    </div>
+			    <div class="col-sm school-col">
+			      15-20 students / teacher
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+		<button class="accordion">School size</button>
+		<div class="panel schools-table">
+			<div class="container schools-table">
+			  <div class="row">
+			    <div class="col-sm school-col">
+			      486
+			    </div>
+			    <div class="col-sm school-col">
+			      553
+			    </div>
+			    <div class="col-sm school-col">
+			      204
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
 
 	<div id="summary"></div>
 
-	<span class="overlay-parent">
-		<span id="school-props" class="overlay col-sm-3"></span>
-		<span id="school1-overlay" class="overlay col-sm-3" onclick="chooseSchool(0)"></span>
-		<span id="school2-overlay" class="overlay col-sm-3" onclick="chooseSchool(1)"></span>
-		<span id="school3-overlay" class="overlay col-sm-3" onclick="chooseSchool(2)"></span>
-	</span>
 </body>
 
 

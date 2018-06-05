@@ -20,6 +20,23 @@ function start() {
 	$('#display_schools_button').hide();
 	$('.overlay-parent').hide();
 	$('#intro_instructions_button').hide();
+	$('#schools').hide();
+
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+	  acc[i].addEventListener("click", function() {
+	    this.classList.toggle("active");
+	    var panel = this.nextElementSibling;
+	    if (panel.style.maxHeight){
+	      panel.style.maxHeight = null;
+	    } else {
+	      panel.style.maxHeight = panel.scrollHeight + "px";
+	    } 
+	  });
+	}
+
 }
 
 // Called each time the user selects a value statement
@@ -82,9 +99,9 @@ function showParentInstructions() {
 function displaySchools() {
 	$('#title').hide();
 	$('body').css('background-image', 'none');
-	$("#schools").load("schools-display.html", function() {
-		insertSchoolData();
-	});
+	$('#schools').show();
+	var accs = document.getElementsByClassName("accordion");
+	accs[0].click();
 }
 
 // Generates school table from school maps
@@ -116,6 +133,8 @@ function generateSchoolPropHtml(prop, data) {
 
 // Handles school selection
 function chooseSchool(num) {
+
+	$('#schools').hide();
 	// Hide the school columns you didn't choose
 	for (let i = 0; i < SCHOOLS.length; i++) {
 		if (i !== num) {
@@ -172,3 +191,5 @@ function chooseSchool(num) {
 window.onload = function(){
 	start();
 };
+
+
