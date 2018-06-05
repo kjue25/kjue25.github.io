@@ -6,7 +6,7 @@ let INSTRUCTIONS = ["</br>\"Education is the most powerful weapon which you can 
 
 let VALUE_STATEMENTS = [["I believe all students in a classroom should receive equal attention from the teacher.", "I believe students who are struggling should receive more attention from the teacher."],
 						["I believe schools should have different classes for advanced and underperforming students.", "I believe that students should be in heterogeneous classrooms that cater to all abilities."],
-						["I believe quantitative metrics like test scores should be weighted higher than environmental factors when assessing school success.", "I believe environmental factors like school culture should be weighted higher than quantitative metrics like test scores when assessing school success."],
+						["I believe quantitative metrics like test scores should be weighted higher than environmental factors like school culture when assessing school success.", "I believe environmental factors like school culture should be weighted higher than quantitative metrics like test scores when assessing school success."],
 						["I believe that in education everyone should benefit equally regardless of their financial contributions.", "I believe that in education those who contribute the most money should benefit the most."],
 						["I believe that it is important to prioritize racial and ethnic diversity in schools over academic achievement.", "I believe that it is important to prioritize academic achievement in schools over racial and ethnic diversity."],
 						["I believe that suspension should be allowed as a form of discipline in schools.", "I believe that suspension should not be allowed as a form of discipline in schools."],
