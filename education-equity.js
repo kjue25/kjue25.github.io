@@ -107,34 +107,6 @@ function displaySchools() {
 	}
 }
 
-// Generates school table from school maps
-function insertSchoolData() {
-	SCHOOL1.forEach(function(value, key, map) {
-		// Generate HTML string for each row
-		$.get("schools-display.html", function(data){
-			let row_html = generateSchoolPropHtml(key, data);
-			$("#schools").append(row_html);
-		});
-	});
-
-	// Use overlay spans to select a school
-	$('.overlay-parent').show();
-	$('#school1-overlay').css('display', 'block');
-	$('#school2-overlay').css('display', 'block');
-	$('#school3-overlay').css('display', 'block');
-}
-
-// Called by insertSchoolData()
-// Updates html from schools-display.html for each school property
-function generateSchoolPropHtml(prop, data) {
-	data = data.replace("School Name", prop);
-	data = data.replace("Lincoln Elementary", SCHOOL2.get(prop));
-	data = data.replace("Stony Brook Elementary", SCHOOL3.get(prop));
-	return data;
-}
- 
- let chosenSchool = ""
-
 let chosen_school = "";
 // Handles school selection
 function chooseSchool(num) {
