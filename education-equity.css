@@ -186,24 +186,10 @@ body {
 	margin-bottom: -33px;
 }
 
-/*#equity-summary {
+#equity-summary {
     position: fixed;
-    top: 5%;
-    left: 40%;
-    height: 90%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-family: "verdana";
-    font-size: 14px;
-}*/
-/*#equity-summary-text {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-family: "verdana";
-    font-size: 14px;
-}*/
+    right: 0px;
+}
 
 .accordion {
     background-color: #eee;
