@@ -137,8 +137,6 @@ function chooseSchool(num) {
 	$('#class_size_button').show();
 	$('#school_size_button').show();
 
-	console.log("before loop");
-
 	SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
 		// For given category, if school is not equitable and the user valued equity in that category
 		if (SCHOOL_EQUITY_CATEGORIES.get(chosen_school)[category_index] && (user_scores[category_index] > 0)) {
@@ -157,7 +155,7 @@ function showChoiceValueConflicts(schoolProperty) {
 	});
 
 	let prop_string = schoolProperty.replace(" ", "_");
-	console.log(prop_string);
+	//console.log(prop_string);
 	$('#' + prop_string + '_button').addClass('pressed-school-prop');
 	// Generates summary based on selected school and schoolProperty
 	let category_index = SCHOOL_PROPERTY_TO_CATEGORY_MAP.get(schoolProperty);
@@ -181,7 +179,7 @@ function showChoiceValueConflicts(schoolProperty) {
 		summary_string += "<li>" + equitable_statements[category_index][i] + "</li>";
 	}
 	school_summary = CATEGORY_TO_SUMMARY.get(chosen_school);
-	console.log(school_summary);
+	//console.log(school_summary);
 	summary_string += "</ul><p>" + school_summary[category_index] + "</li>";
 	summary_string += "</ul><br><br><br>";
 
