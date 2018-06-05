@@ -1,4 +1,4 @@
-let INSTRUCTIONS = ["</br>\"Education is the most powerful weapon which you can use to change the world.\" - Nelson Mandela <br/><br/> This explorable explanation aims to help you better understand issues in education while also encouraging you to think about your beliefs.<br/> ", "In the following section, please choose the option that best matches your values for the education system. <br/><br/>There are no “right” choices or “wrong” choices, and you may not always fall exactly on one side or the other. However, the binary decisions reflect difficult tradeoffs that you may face in the real world. <br/><br/>Are you ready?", "Now, imagine you are a parent with a child who is about to start elementary school for the first time. </br> </br> You are trying to choose an elementary school for your child and have a few options."];
+let INSTRUCTIONS = ["</br>\"Education is the most powerful weapon which you can use to change the world.\" - Nelson Mandela <br/><br/> This explorable explanation aims to help you better understand issues in education while also encouraging you to think about your beliefs.<br/> ", "In the following section, please choose the option that best matches your values for the education system. <br/><br/>There are no “right” choices or “wrong” choices, and you may not always fall exactly on one side or the other. However, the binary decisions reflect difficult tradeoffs that you may face in the real world. <br/><br/>Are you ready?", "Now, imagine you are a parent with a child who is about to start elementary school for the first time. </br> </br> You are trying to choose an elementary school for your child and have a few options. Select a school by clicking on the school name."];
 
 let VALUE_STATEMENTS = [["I believe all students in a classroom should receive equal attention from the teacher.", "I believe students who are struggling should receive more attention from the teacher."],
 						["I believe schools should have different classes for advanced and underperforming students.", "I believe that students should be in heterogeneous classrooms that cater to all abilities."],
@@ -89,13 +89,13 @@ let CATEGORY_TO_SCHOOL_PROPERTIES = new Map([['support equity', [0,0,0,0,0,1,0,0
 											 ['resource equity', [1,0,0,0,0,0,1,0,0]],
 											 ['discipline', [0,0,1,0,0,0,0,0,0]]]);
 
-let SCHOOL_PROPERTY_TO_CATEGORY = new Map([['school type', 4],
-										   ['demographics', 3],
-										   ['discipline', 5],
-										   ['academics', 2],
-										   ['tracking', 1],
-										   ['support programs', 0],
-										   ['supplemental programs', 4]]);
+let SCHOOL_PROPERTY_TO_CATEGORY_MAP = new Map([['school type', 4],
+										   	   ['demographics', 3],
+										   	   ['discipline', 5],
+										   	   ['academics', 2],
+										   	   ['tracking', 1],
+										   	   ['support programs', 0],
+										   	   ['supplemental programs', 4]]);
 
 let CATEGORY_TO_SUMMARY = new Map([[0, ['Students have different needs, backgrounds, and learning styles.  As indicated in your chosen value, equity means providing students with the support they need rather than distributing attention equally among them.  However, equity in support mechanisms for students often means that these resources are taken away from other areas and vice versa.  In this case, Washington Elementary does not have the resources to provide equitable support programs to its students.',
 												 'While tracking can be seen as a form of personalized education, the reality of its implementation reveals an inherently inequitable system.  Personalized learning is used to cater to students\' individual needs and goals, but tracking has been referred to as "modern-day segregation in public schools" (Kohli & Quartz, 2014). Early tracking separates students into different educational paths based on their perceived ability (tracks eventually feed into AP, Honors, Standard, College Prep, and similar courses). Many education researchers have shown these groupings perpetuate class inequalities and the achievement gap. As a University of Colorado report bluntly stated, although tracking does not explicitly refer to "race or class differences... the preservation of privilege is always the subtext."',
@@ -118,3 +118,4 @@ let CATEGORY_TO_SUMMARY = new Map([[0, ['Students have different needs, backgrou
 
 let NUM_STATEMENT_PANELS = 8;
 let NUM_VALUE_CATEGORIES = 6;
+let NUM_SCHOOL_PROPERTIES = 9;

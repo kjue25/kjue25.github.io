@@ -9,7 +9,21 @@ body {
 	background-image: url("background.png");
 }
 
-#title {
+.school-col {
+	background-color: #fcf3ef;
+	border: 1px solid #e8eaed;
+	text-align:center;
+}
+
+.school-names {
+	padding: 10px;
+}
+
+.schools-table {
+	background-color: #fcf3ef;
+}
+
+#title{
     display: none;
 	position:fixed;
 	top:50%;
@@ -36,11 +50,9 @@ body {
 	text-align: center;
 	font-family: "verdana";
 	font-size: 30px;
-	height: 95%;
+	height: 100%;
 	margin: 10px;
-	text-align: center;
 	vertical-align: center;
-	text-align: center;
 }
 
 .speech-bubble-left:hover {
@@ -176,11 +188,52 @@ body {
 
 #equity-summary {
     position: fixed;
-    top: 50%;
+    top: 5%;
     left: 40%;
-    height: 100px;
+    height: 90%;
     text-align: center;
     justify-content: center;
+    align-items: center;
     font-family: "verdana";
     font-size: 14px;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 6px;
+    width: 100%;
+    border: 1px solid grey;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.row-values { 
+	min-height:100vh; 
 }
