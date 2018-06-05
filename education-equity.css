@@ -186,6 +186,10 @@ body {
 	margin-bottom: -33px;
 }
 
+#summary {
+    font-size: 14px;
+}
+
 #equity-summary {
     position: fixed;
     right: 0px;
