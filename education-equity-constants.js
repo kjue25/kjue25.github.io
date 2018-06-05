@@ -82,12 +82,20 @@ let SCHOOL_PROPERTY_TO_INDEX_MAP = new Map([[0, 'school type'],
 //Value category keys that map to arrays of school property flags defined by the SCHOOL_PROPERTY_TO_INDEX_MAP above. If property is flagged,
 //it indicates that the property relates to the equity category and should be flagged if there is a school choice/equity category mismatch.
 
-let CATEGORY_TO_SCHOOL_PROPERTIES = new  Map([['support equity', [0,0,0,0,0,1,0,0,0]],
+let CATEGORY_TO_SCHOOL_PROPERTIES = new Map([['support equity', [0,0,0,0,0,1,0,0,0]],
 											 ['opportunity equity', [0,0,0,0,1,0,0,0,0]],
 											 ['testing', [0,0,0,1,0,0,0,0,0]],
+ 											 ['diversity', [0,1,0,0,0,0,0,0,0]],
 											 ['resource equity', [1,0,0,0,0,0,1,0,0]],
-											 ['diversity', [0,1,0,0,0,0,0,0,0]],
 											 ['discipline', [0,0,1,0,0,0,0,0,0]]]);
+
+let SCHOOL_PROPERTY_TO_CATEGORY = new Map([['school type', 4],
+										   ['demographics', 3],
+										   ['discipline', 5],
+										   ['academics', 2],
+										   ['tracking', 1],
+										   ['support programs', 0],
+										   ['supplemental programs', 4]]);
 
 let CATEGORY_TO_SUMMARY = new Map([[0, ['Students have different needs, backgrounds, and learning styles.  As indicated in your chosen value, equity means providing students with the support they need rather than distributing attention equally among them.  However, equity in support mechanisms for students often means that these resources are taken away from other areas and vice versa.  In this case, Washington Elementary does not have the resources to provide equitable support programs to its students.',
 												 'While tracking can be seen as a form of personalized education, the reality of its implementation reveals an inherently inequitable system.  Personalized learning is used to cater to students\' individual needs and goals, but tracking has been referred to as "modern-day segregation in public schools" (Kohli & Quartz, 2014). Early tracking separates students into different educational paths based on their perceived ability (tracks eventually feed into AP, Honors, Standard, College Prep, and similar courses). Many education researchers have shown these groupings perpetuate class inequalities and the achievement gap. As a University of Colorado report bluntly stated, although tracking does not explicitly refer to "race or class differences... the preservation of privilege is always the subtext."',

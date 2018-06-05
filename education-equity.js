@@ -114,6 +114,7 @@ function generateSchoolPropHtml(prop, data) {
 	return data;
 }
 
+let school = "";
 // Handles school selection
 function chooseSchool(num) {
 
@@ -173,8 +174,39 @@ function chooseSchool(num) {
 	// $('#summary').html(summary_string);
 }
 
-function clickProperty(property) {
+function showChoiceValueConflicts(schoolProperty) {
+	// Generates summary based on selected school and schoolProperty
+	let category = SCHOOL_PROPERTY_TO_CATEGORY.get(schoolProperty);
 
+
+	let text_color = ['#886A9E', '#c06c84', '#f67280', '#357BB3'];
+	for (let i = 0; i < NUM_VALUE_CATEGORIES; i++) {
+		// For given category, if school is not equitable and the user valued equity in that category
+		if (SCHOOL_EQUITY_CATEGORIES.get(chosen_school)[i] && (user_scores[i] > 0)) {
+			let category = CATEGORY_TO_INDEX_MAP.get(i);
+			summary_string += "<p>"+ SCHOOL_NAMES[num] + " is inequitable in <span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + category + "</span>";
+			summary_string += " because of the following properties: </p><ul>";
+
+			// Display school properties related to that category
+			let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
+			for (let j = 0; j < properties.length; j++) {
+				if (properties[j]) {
+					summary_string += "<li><span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + "</span>: " + chosen_school.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)) + "</li>";
+					// TODO: Also highlight the properties in the school column
+				}
+			}
+
+			// Display selected equity value statements related to that category
+			summary_string += "</ul><p>This conflicts with your chosen values: </p><ul>";
+			for (let j = 0; j < equitable_statements[i].length; j++) {
+				summary_string += "<li>" + equitable_statements[i][j] + "</li>";
+			}
+			school_summary = CATEGORY_TO_SUMMARY.get(num);
+			console.log(school_summary);
+			summary_string += "</ul><p>" + school_summary[i] + "</li>";
+			summary_string += "</ul><br><br><br>";
+		}
+	}
 }
 
 window.onload = function(){
