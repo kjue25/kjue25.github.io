@@ -117,60 +117,64 @@ function generateSchoolPropHtml(prop, data) {
 // Handles school selection
 function chooseSchool(num) {
 
+	$('#summary').show();
 
-	
 
-	// Hide the school columns you didn't choose
-	for (let i = 0; i < SCHOOLS.length; i++) {
-		if (i !== num) {
-			$('.school' + i).hide();
-		} else {
-			$('.school' + i).show();
-		}
-	}
+	// // Hide the school columns you didn't choose
+	// for (let i = 0; i < SCHOOLS.length; i++) {
+	// 	if (i !== num) {
+	// 		$('.school' + i).hide();
+	// 	} else {
+	// 		$('.school' + i).show();
+	// 	}
+	// }
 
-	$('#schools').addClass('col-sm-5');
-	$('.category').removeClass('col-sm-3');
-	$('.category').addClass('col-sm-3');
-	$('.school' + num).removeClass('col-sm-3');
-	$('.school' + num).addClass('col-sm-9');
-	$('#summary').addClass('col-sm-7');
+	// $('#schools').addClass('col-sm-5');
+	// $('.category').removeClass('col-sm-3');
+	// $('.category').addClass('col-sm-3');
+	// $('.school' + num).removeClass('col-sm-3');
+	// $('.school' + num).addClass('col-sm-9');
+	// $('#summary').addClass('col-sm-7');
 
-	// FIXME: Still able to click on not shown schools
+	// // FIXME: Still able to click on not shown schools
 
-	// Generates summary based on selected school
-	let summary_string = "<p class = 'title2'>You chose " + SCHOOL_NAMES[num] + ".</p>";
-	let chosen_school = SCHOOLS[num];
-	let text_color = ['#886A9E', '#c06c84', '#f67280', '#357BB3'];
-	for (let i = 0; i < NUM_VALUE_CATEGORIES; i++) {
-		// For given category, if school is not equitable and the user valued equity in that category
-		if (SCHOOL_EQUITY_CATEGORIES.get(chosen_school)[i] && (user_scores[i] > 0)) {
-			let category = CATEGORY_TO_INDEX_MAP.get(i);
-			summary_string += "<p>"+ SCHOOL_NAMES[num] + " is inequitable in <span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + category + "</span>";
-			summary_string += " because of the following properties: </p><ul>";
+	// // Generates summary based on selected school
+	// let summary_string = "<p class = 'title2'>You chose " + SCHOOL_NAMES[num] + ".</p>";
+	// let chosen_school = SCHOOLS[num];
+	// let text_color = ['#886A9E', '#c06c84', '#f67280', '#357BB3'];
+	// for (let i = 0; i < NUM_VALUE_CATEGORIES; i++) {
+	// 	// For given category, if school is not equitable and the user valued equity in that category
+	// 	if (SCHOOL_EQUITY_CATEGORIES.get(chosen_school)[i] && (user_scores[i] > 0)) {
+	// 		let category = CATEGORY_TO_INDEX_MAP.get(i);
+	// 		summary_string += "<p>"+ SCHOOL_NAMES[num] + " is inequitable in <span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + category + "</span>";
+	// 		summary_string += " because of the following properties: </p><ul>";
 
-			// Display school properties related to that category
-			let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
-			for (let j = 0; j < properties.length; j++) {
-				if (properties[j]) {
-					summary_string += "<li><span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + "</span>: " + chosen_school.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)) + "</li>";
-					// TODO: Also highlight the properties in the school column
-				}
-			}
+	// 		// Display school properties related to that category
+	// 		let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
+	// 		for (let j = 0; j < properties.length; j++) {
+	// 			if (properties[j]) {
+	// 				summary_string += "<li><span style=\"font-weight:bold;color:" + text_color[i%4] + "\">" + SCHOOL_PROPERTY_TO_INDEX_MAP.get(j) + "</span>: " + chosen_school.get(SCHOOL_PROPERTY_TO_INDEX_MAP.get(j)) + "</li>";
+	// 				// TODO: Also highlight the properties in the school column
+	// 			}
+	// 		}
 
-			// Display selected equity value statements related to that category
-			summary_string += "</ul><p>This conflicts with your chosen values: </p><ul>";
-			for (let j = 0; j < equitable_statements[i].length; j++) {
-				summary_string += "<li>" + equitable_statements[i][j] + "</li>";
-			}
-			school_summary = CATEGORY_TO_SUMMARY.get(num);
-			console.log(school_summary);
-			summary_string += "</ul><p>" + school_summary[i] + "</li>";
-			summary_string += "</ul><br><br><br>";
-		}
-	}
+	// 		// Display selected equity value statements related to that category
+	// 		summary_string += "</ul><p>This conflicts with your chosen values: </p><ul>";
+	// 		for (let j = 0; j < equitable_statements[i].length; j++) {
+	// 			summary_string += "<li>" + equitable_statements[i][j] + "</li>";
+	// 		}
+	// 		school_summary = CATEGORY_TO_SUMMARY.get(num);
+	// 		console.log(school_summary);
+	// 		summary_string += "</ul><p>" + school_summary[i] + "</li>";
+	// 		summary_string += "</ul><br><br><br>";
+	// 	}
+	// }
 
-	$('#summary').html(summary_string);
+	// $('#summary').html(summary_string);
+}
+
+function clickProperty(property) {
+
 }
 
 window.onload = function(){

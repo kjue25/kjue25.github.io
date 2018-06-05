@@ -173,3 +173,14 @@ body {
 	margin-left: -16.5px;
 	margin-bottom: -33px;
 }
+
+#equity-summary {
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    height: 100px;
+    text-align: center;
+    justify-content: center;
+    font-family: "verdana";
+    font-size: 14px;
+}
