@@ -168,22 +168,22 @@ function showChoiceValueConflicts(school_property) {
 		let category_index = SCHOOL_PROPERTY_TO_CATEGORY_MAP.get(school_property);
 		let category = CATEGORY_TO_INDEX_MAP.get(category_index);
 
+		// Highlight the school properties related to the associated category
+		let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
+		for (let i = 0; i < properties.length; i++) {
+			if (properties[i]) {
+				let related_prop_string = SCHOOL_PROPERTY_TO_INDEX_MAP.get(i).replace(" ", "_");
+				$('#' + related_prop_string + '_button').addClass('pressed-school-prop');
+			}
+		}
+
 		let summary_string = "";
 		if ($('#' + prop_string + '_button').hasClass('generic-school-prop')) { // Generic prop
-			prop_summary = GENERIC_PROP_TO_SUMMARY_MAP.get(category_index);
+			prop_summary = GENERIC_PROP_TO_SUMMARY_MAP.get(category);
 			summary_string = "<p>" + prop_summary + "</p>";
 		} else { // Misaligned prop
 			let text_color = ['#886A9E', '#c06c84', '#f67280', '#357BB3'];
 			summary_string = "<p>Your school is inequitable in <span style=\"font-weight:bold;color:" + text_color[category_index%4] + "\">" + category + "</span>";
-
-			// Highlight the school properties related to the associated category
-			let properties = CATEGORY_TO_SCHOOL_PROPERTIES.get(category);
-			for (let i = 0; i < properties.length; i++) {
-				if (properties[i]) {
-					let related_prop_string = SCHOOL_PROPERTY_TO_INDEX_MAP.get(i).replace(" ", "_");
-					$('#' + related_prop_string + '_button').addClass('pressed-school-prop');
-				}
-			}
 
 			// Display selected equity value statements related to that category
 			summary_string += "<p>This conflicts with your chosen values:</p>";
