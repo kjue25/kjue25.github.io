@@ -192,7 +192,7 @@ body {
 }
 
 #equity-summary {
-    position: fixed;
+    /*position: fixed;*/
     right: 0px;
 }
 

@@ -99,11 +99,14 @@ function showParentInstructions() {
 // Displays school table using the schools-display.html template
 function displaySchools() {
 	$('#title').hide();
+	$('#summary').hide();
 	$('body').css('background-image', 'none');
 	$('#schools').show();
 	var acc1 = $(".accordion")[0];
-	if (typeof(acc1) !== "undefined")  {
-		acc1.click();
+	if (typeof(acc1) !== "undefined") {
+		if (!$(".accordion").hasClass("active")) {
+			acc1.click();
+		}
 	}
 }
 
@@ -127,6 +130,12 @@ function chooseSchool(num) {
 	$('#class_size').html(chosen_school.get('class size'));
 	$('#school_size').html(chosen_school.get('school size'));
 
+	SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
+			let related_prop_string = prop.replace(" ", "_");
+			$('#' + related_prop_string + '_button').removeClass('pressed-school-prop');
+	});
+	$('#equity-summary-text').html("Click on a pink highlighted property to the left to see where the school you chose doesn't align with your original values. Gray properties are not misaligned, but you can still click on them to understand how the general property affects equity.");
+
 
 	$('#school_type_button').show();
 	$('#demographics_button').show();
@@ -138,6 +147,8 @@ function chooseSchool(num) {
 	$('#class_size_button').show();
 	$('#school_size_button').show();
 	$('#conclusion-button').show();
+	$('#choose-school-button').show();
+
 
 	SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
 		// For given category, if school is not equitable and the user valued equity in that category
