@@ -192,8 +192,10 @@ body {
 }
 
 #equity-summary {
-    /*position: fixed;*/
+    position: fixed;
     right: 0px;
+    overflow-y: scroll;
+    height: 100%;
 }
 
 .accordion {
