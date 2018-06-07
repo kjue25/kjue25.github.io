@@ -7,7 +7,7 @@
 	<title>Equity, I Choose You</title>
 	<meta name="description" content="The HTML5 Herald">
 	<meta name="author" content="Kylie">
-
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="education-equity.css">
 	<link rel="stylesheet" href="bootstrap.css">
 	<!-- Latest compiled and minified CSS -->
@@ -22,11 +22,11 @@
 		<div class="rounded-custom card">
 		  <div class="card-body">
 		  	  <p id="instructions" class="card-text"></p>
-		  	  <div id="intro-wrapper"> 
+		  	  <div id="intro-wrapper">
 
-		  	  	<button class="custom-btn btn" style="display: none;" id="first_intro_button" onclick="showSecondIntro();">Continue</button> 
+		  	  	<button class="custom-btn btn" style="display: none;" id="first_intro_button" onclick="showSecondIntro();">Continue</button>
 
-		  	  	<button class="custom-btn btn" style="display: none;" id="intro_instructions_button" onclick="showNextInstructions();">Ready!</button> 
+		  	  	<button class="custom-btn btn" style="display: none;" id="intro_instructions_button" onclick="showNextInstructions();">Ready!</button>
 				<button class="custom-btn btn" style="display: none;" id="display_schools_button" onclick="displaySchools()">Let's see.</button>
 				<button class="custom-btn btn" style="display: none;" id="refresh_button" onclick="location.reload()">Start Over</button>
 		  	  </div>
@@ -51,8 +51,8 @@
 		</div>
 	</span>
 
-
-	<div id="schools" style="background-color:#fcf3ef; display: none;" > 
+<div id="schools" class="w3-container w3-margin" style="display: none;">
+	<div style="background-color:#ffffff;" >
 		<div class="container schools-table">
 		  <div class="row">
 		    <div class="col-sm school-col school-names">
@@ -66,6 +66,7 @@
 		    </div>
 		  </div>
 		</div>
+	</div>
 
 		<button class="accordion">School type</button>
 		<div class="panel schools-table">
@@ -75,7 +76,7 @@
 			      Public school
 			    </div>
 			    <div class="col-sm school-col">
-			      Public charter school with private K to guarantee admission
+			      Public charter school that is lottery-based. However, students who attend the private kindergarten are guaranteed admission.
 			    </div>
 			    <div class="col-sm school-col">
 			      Private school with sufficient need-based financial aid to support your family.
