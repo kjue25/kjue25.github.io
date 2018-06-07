@@ -11,7 +11,7 @@ body {
 
 .school-col {
 	background-color: #ffffff;
-	border: 1px solid white;
+	border: 1px solid #eee;
 	text-align:center;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 #title{
-    display: none;
+  display: none;
 	position:fixed;
 	top:50%;
 	left:50%;
@@ -113,6 +113,9 @@ body {
 	padding: 12px 24px;
 	text-align: center;
 }
+.custom-btn:hover {
+	background-color: black;
+}
 
 #intro-wrapper {
   width: 100%;
@@ -123,9 +126,6 @@ body {
   justify-content: center;
 }
 
-.custom-btn:hover {
-	background-color: black;
-}
 
 #wrapper {
   width: 100%;
