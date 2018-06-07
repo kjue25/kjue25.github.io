@@ -147,15 +147,15 @@ function chooseSchool(num) {
 			$("#" + button + "_button").attr('style', function(i, style) {
     			return style && style.replace(/background-color[^;]+;?/g, '');
 			});
+			$("#" + button + "_button").removeClass('generic-school-prop');
 			$("#" + button + "_button").addClass('custom-btn');
-			$("#" + button + "_button").prop('disabled', false);
 		}
 	});
 }
 
 function showChoiceValueConflicts(school_property) {
 
-	let prop_string = school_property.replace(" ", "_");
+	let prop_string = school_property.replace(" ", "_");	
 	if (!$('#' + prop_string + '_button').hasClass('pressed-school-prop')) {
 
 		// De-select

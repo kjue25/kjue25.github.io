@@ -237,7 +237,12 @@ body {
 }
 
 .pressed-school-prop {
-    background-color: black;
+    background-color: black ! important;
+}
+
+.generic-school-prop {
+    background-color: #777;
+    color: white;
 }
 
 .value-statement-right {
