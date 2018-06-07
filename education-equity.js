@@ -98,6 +98,7 @@ function showParentInstructions() {
 
 // Displays school table using the schools-display.html template
 function displaySchools() {
+	$('body').css('background-color', '#ffffff');
 	$('#title').hide();
 	$('#summary').hide();
 	$('body').css('background-image', 'none');
