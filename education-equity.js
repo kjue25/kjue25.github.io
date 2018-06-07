@@ -114,7 +114,6 @@ let chosen_school = "";
 // Handles school selection
 function chooseSchool(num) {
 	chosen_school = SCHOOLS[num];
-	let chosen_school_string = "class = 'title2'>You chose " + SCHOOL_NAMES[num] + ".</p>";
 	$('#school_name').html(SCHOOL_NAMES[num])
 	$('#schools').hide();
 	$('#summary').show();
@@ -131,8 +130,8 @@ function chooseSchool(num) {
 	$('#school_size').html(chosen_school.get('school size'));
 
 	SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
-			let related_prop_string = prop.replace(" ", "_");
-			$('#' + related_prop_string + '_button').removeClass('pressed-school-prop');
+		let related_prop_string = prop.replace(" ", "_");
+		$('#' + related_prop_string + '_button').removeClass('pressed-school-prop');
 	});
 	$('#equity-summary-text').html("Click on a pink highlighted property to the left to see where the school you chose doesn't align with your original values. Gray properties are not misaligned, but you can still click on them to understand how the general property affects equity.");
 
@@ -149,17 +148,19 @@ function chooseSchool(num) {
 	$('#conclusion-button').show();
 	$('#choose-school-button').show();
 
-
 	SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
 		// For given category, if school is not equitable and the user valued equity in that category
+		let button = prop.replace(" ", "_");
 		if (SCHOOL_EQUITY_CATEGORIES.get(chosen_school)[category_index] && (user_scores[category_index] > 0)) {
 			// Enable button
-			button = prop.replace(" ", "_");
 			$("#" + button + "_button").attr('style', function(i, style) {
     			return style && style.replace(/background-color[^;]+;?/g, '');
 			});
 			$("#" + button + "_button").removeClass('generic-school-prop');
 			$("#" + button + "_button").addClass('custom-btn');
+		} else {
+			$("#" + button + "_button").removeClass('custom-btn');
+			$("#" + button + "_button").addClass('generic-school-prop');
 		}
 	});
 }
@@ -202,6 +203,7 @@ function showChoiceValueConflicts(school_property) {
 				summary_string += "<hgroup class='value-statement-right'>" + equitable_statements[category_index][i] + "</hgroup><br/><br/>";
 			}
 			school_summary = CATEGORY_TO_SUMMARY.get(chosen_school);
+			// console.log(chosen_school);
 			summary_string += "<p>" + school_summary[category_index] + "</p>";
 		}
 			
