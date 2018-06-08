@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *
 * ======================================================= */
 body {
@@ -731,7 +731,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 0 !important;
 }
 .blog-flex .featured-blog, .blog-flex .blog-entry {
-  width: 50%;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .blog-flex .featured-blog, .blog-flex .blog-entry {
@@ -740,7 +740,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .blog-flex .featured-blog {
   padding: 2em;
-  width: 50%;
+  width: 100%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -806,7 +806,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
 }
-.blog-flex .featured-blog .desc-t .read-button {
+.read-button {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
@@ -815,8 +815,8 @@ h1, h2, h3, h4, h5, h6, figure {
   color: white;
   border: 1px solid red;
   padding: 10px 15px;
-  border: 1px solid white;
-  color: #fff;
+  border: 1px solid black;
+  color: #000000;
 }
 .blog-flex .blog-entry {
   padding: 4em;
