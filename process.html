@@ -88,6 +88,7 @@
 									<li><a href="process.html#rite">Initial design</a></li>
 									<li><a href="process.html#content-testing">Content iteration </a></li>
 									<li><a href="process.html#UI-testing">Refining</a></li>
+									<li><a href="process.html#testimonies">Refining</a></li>
 								</ul>
 							</li>
 							<li class="has-dropdown"><a href="solution.html">Next Steps</a>
@@ -194,7 +195,7 @@
 
 					<p>As a result of our focus on content quality, we decided to ask teachers specifically for feedback during our initial user tests since they would have the most domain-specific knowledge.  We also chose to use a Rapid Iteration Testing and Evaluation (RITE) format for our tests so that we would continually adjust language choices with each new test.  This allowed us to really fine-tune the content, even before we had finalized what we wanted the summary and conclusion portion of our prototype (what appears after you’ve selected a school) to look like.<p>
 
-					<p>We interviewed three teachers with two primary sets of questions in mind:</p>
+					<p>We interviewed <b>three teachers</b> with two primary sets of questions in mind:</p>
 					<ul>
 						<li>Do the decisions we’re asking you to make – both in the value statements and in school choice – feel realistic?  Do they reflect school environments that you’ve seen in your experience as a teacher?</li>
 						<li>Do the mappings of value statements to school properties to equity categories make sense?  Do the value statements align with the school properties that they would actually affect in an equity context?</li>
@@ -219,28 +220,47 @@
 			</div>
 
 			<div class="row animate-box">
-				<div class="heading-section" id="UI-testing">
+				<div class="heading-section" id="testimonies">
 					<h3>Refining the online product</h3>
-					<p>After fine-tuning the content and building out the full online prototype with the summary section, we interviewed eleven users from our target audience – college-aged students who do not have children but may in the future and who would likely have the privilege to choose a school for their child later in life.  For these users, we focused on three different questions:</p>
+					<p>After fine-tuning the content and building out the full online prototype with the summary section, we interviewed <b>eleven users from our target audience</b> – college-aged students who do not have children but may in the future and who would likely have the privilege to choose a school for their child later in life.  For these users, we focused on three different questions:</p>
 					<ul>
 						<li>Was the UI difficult to use? (This mostly came through observing and asking them to talk through what they saw/were doing.)</li>
 						<li>Did the message about complexity in education equity and the juxtaposition of values for an equitable society with personal school choice implications come across?</li>
 						<li>Did the content and message feel relevant to you?</li>
 					</ul>
-					<strong>Subtitle 1</strong>
-					<p>To be added</p>
+					<strong>1. Explicit introductory instructions</strong>
+					<p>A few users noted that the introductory instructions caused some mistrust in the objective of the explorable, with one user calling the language “cryptic” and “stilted.”  Since these feelings were generally compounded in their then being forced to make binary decisions, we updated the instructions to more explicitly prepare the user for picking value statements.  We wanted to make it clear that there were not expected to 100-percent agree with only one of the values and also emphasized that there are no “right” or “wrong” answers.  After making these changes and additionally asking future testers about the clarity of instructions, we did not see mistrust going into the value statement selection task.</p>
 
-					<strong>Subtitle 2</strong>
-					<p>To be added</p>
+					<strong>2. A table for school choice</strong>
+					<p>The personal choice section was the most information dense section of our experience and led to design challenges in conveying the information in a digestible but sufficiently informative manner. In many early user tests, we consistently had test users ask for more information about the school (“What is the school size? I could not make a decision without knowing that.” “What are the specifics of the demographic makeups? ‘Majority white’ and ‘majority students of color’ are oversimplified.”) But as we added more and more information, our depiction become more and more difficult to navigate.</p>
 
-					<strong>Subtitle 2</strong>
-					<p>To be added</p>
+					<p>In talking with one user about this issue, she recommended a scrollable comparison table approach, modeled after tables that compare different features of cameras. While not particularly visually appealing, this format is very readable and allows for comparison across different choices easily.</p>
 
-					<strong>Subtitle 2</strong>
-					<p>To be added</p>
+					<p>After switching to this format, we had to make a compromise between continued feedback that presenting all the information was overwhelming and opposing requests for all the information to be presented at once. We decided to keep the single table approach but instead collapsed all school properties but the first using an accordion format.  In this way, users can digest one row of information at a time and are forced to click to actively read and learn more about each trait.</p>
 
-					<strong>User testimonies</strong>
-					<p>To be added</p>
+					<strong>3. Back button for reselecting schools</strong>
+					<p>In our tests, many people would accidentally click through on school choices or expect that hitting a school button would expand all of the school properties.  After going through the online explorable, users also stated that they were curious to learn more about the other school options and what mismatches in equity those would generate (“I want to do it again”).  To both allow users to undo the click-through mistake, as well as allowing them to learn more by switching schools, we created a back button on the summary page.</p>
+
+					<strong>4. Showing non-mismatches in equity</strong>
+					<p>In the summary section of our explorable, we initially only showed content where the user’s equitable values conflicted with their choice of school, largely to constrain information display and to prevent their feeling guilty if their original values were already inequitable. However, we didn’t consider the fact that many users wanted positive feedback – one in particular asked to understand why their school choice was equitable in the properties that weren’t highlighted.  By enabling the school property buttons where mismatches with equitable values weren’t present, we were able to both maximize learning if a user’s original value statement choice was inequitable and also provide positive feedback to users whose values and school choice were equitable in a particular property.  This also ensures that all users, regardless of their value statements, receive informative content about equity and school choice – rather than maximizing content for users with equitable value statements and inequitable school properties.</p>
+				</div>
+			</div>
+
+			<div class="row animate-box">
+				<div class="heading-section" id="UI-testing">
+					<h3>User testimonites</h3>
+
+					<p>Overall, through our user testing we also wanted to make sure that the content felt relevant to our target audience.  In particular, this concern came from the fact that our initial interviews were with teachers – who have already actively been thinking about these issues of equity – and that our in-class demo saw mixed responses around effectiveness.  However, none of our individual user tests indicated that the our target audience members felt disconnected from the content.  In fact, after completing the explorable, several users expressed the understanding of complexity that we wanted to convey:</p>
+					<ul>
+						<li>“I really cared about the content – that’s why the decision was so hard. By choosing the private school I felt like I was enforcing these issues in education.” - Stanford master’s student who attended a private high school and selected the private school</li>
+						<li>“I liked the content.  Definitely very understandable...It made sense <em>for me</em>. [emphasis added]” - USC freshman who attended a private high school and selected the private school</li>
+						<li>“It made me appreciate how much more complicated it is to make these decisions.  I kind of have been thinking about – just abstractly – private vs. public and when I have a kid. I came to empathize with people who make decisions on both sides...I think it is relevant...the thing at the end with the values is a really good way to visualize the complexities of the decision.” - Stanford senior who attended a private high school</li>
+						<li>“I really like the idea of people seeing how their values and core beliefs relate to the decision they make about education – like wow!  That’s so important.  Y’all got me in the end.”  – Stanford senior</li>
+					</ul>
+
+					<p>The explorable prompted another user just out of college to go on what she called a related “rant” about class gaps and class mobility through education and how “liberal [values] inherently contradict the direct incentives of people in power.” In general, we found that those who came from more privileged backgrounds and private schools seemed to really resonate with the explorable's message.</p>
+
+					<p>In our future work, we want to continue testing the explorable’s effectiveness with our target audience.  For more information about our considerations in specifying our audience, see <a href="solution.html">Next Steps.</a></p>
 
 				</div>
 			</div>
