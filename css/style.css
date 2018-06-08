@@ -770,7 +770,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .blog-flex .featured-blog .desc-t {
   display: table;
-  min-height: 430px;
+  min-height: 200px;
   padding: 2em;
   z-index: 1;
 }
