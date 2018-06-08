@@ -770,7 +770,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .blog-flex .featured-blog .desc-t {
   display: table;
-  min-height: 430px;
+  min-height: 200px;
   padding: 2em;
   z-index: 1;
 }
@@ -781,12 +781,14 @@ h1, h2, h3, h4, h5, h6, figure {
   z-index: 1;
 }
 .blog-flex .featured-blog .desc-t .featured-head {
+  text-align: center;
   display: block;
   margin-bottom: 30px;
   font-size: 18px !important;
   color: rgba(255, 255, 255, 0.8);
 }
 .blog-flex .featured-blog .desc-t h3 {
+  text-align: center;
   font-weight: 700;
   font-family: "Oxygen", sans-serif;
   font-size: 30px;
