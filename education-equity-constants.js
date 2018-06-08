@@ -44,7 +44,7 @@ let SCHOOL1 = new Map([['school type', 'public school'],
 					   ['school size', '486']]);
 let SCHOOL2 = new Map([['school type', 'Public charter school with private K to guarantee admission'],
 					   ['demographics', 'Majority black and Latinx students'],
-					   ['discipline', 'Disciplinary process includes meetings with parents and staff process; suspension occurs after third disciplinary infraction.'],
+					   ['discipline', 'Disciplinary process includes meetings with parents and staff; suspension occurs after third disciplinary infraction.'],
 					   ['academics', 'Average test scores'],
 					   ['tracking', 'Students are primarily randomly assigned; gifted ed program can be tested into.'],
 					   ['support programs', 'Good quality support services, such as mental and physical health counseling and disability accommodations. There are 4 school counselors.'],
