@@ -227,6 +227,14 @@ function goToConclusion() {
 	$('#title').show();
 	$('#instructions').html(INSTRUCTIONS[3]);
 	$('#display_schools_button').hide();
+	$('#call_to_action_button').show();
+	$('body').css('background-image', 'background.png');
+}
+
+function displayCallToAction() {
+	$('body').css('background-color', '#ffffff');
+	$('#instructions').html(INSTRUCTIONS[4]);
+	$('#call_to_action_button').hide();
 	$('#refresh_button').show();
 	$('body').css('background-image', 'background.png');
 }
