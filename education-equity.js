@@ -34,7 +34,7 @@ function start() {
 	      panel.style.maxHeight = null;
 	    } else {
 	      panel.style.maxHeight = panel.scrollHeight + "px";
-	    } 
+	    }
 	  });
 	}
 
@@ -168,7 +168,7 @@ function chooseSchool(num) {
 
 function showChoiceValueConflicts(school_property) {
 
-	let prop_string = school_property.replace(" ", "_");	
+	let prop_string = school_property.replace(" ", "_");
 	if (!$('#' + prop_string + '_button').hasClass('pressed-school-prop')) {
 		// De-select and select new prop button
 		SCHOOL_PROPERTY_TO_CATEGORY_MAP.forEach(function(category_index, prop, map) {
@@ -176,7 +176,7 @@ function showChoiceValueConflicts(school_property) {
 			$('#' + related_prop_string + '_button').removeClass('pressed-school-prop');
 		});
 		$('#' + prop_string + '_button').addClass('pressed-school-prop');
-		
+
 		// Generates summary based on selected school and school_property
 		let category_index = SCHOOL_PROPERTY_TO_CATEGORY_MAP.get(school_property);
 		let category = CATEGORY_TO_INDEX_MAP.get(category_index);
@@ -207,7 +207,7 @@ function showChoiceValueConflicts(school_property) {
 			// console.log(chosen_school);
 			summary_string += "<p>" + school_summary[category_index] + "</p>";
 		}
-			
+
 		$('#equity-summary-text').html(summary_string);
 
 	} else {
@@ -235,12 +235,12 @@ function displayCallToAction() {
 	$('body').css('background-color', '#ffffff');
 	$('#instructions').html(INSTRUCTIONS[4]);
 	$('#call_to_action_button').hide();
+	$('#spacing_for_button').show();
 	$('#refresh_button').show();
+	$('#about_button').show();
 	$('body').css('background-image', 'background.png');
 }
 
 window.onload = function(){
 	start();
 };
-
-
