@@ -1,3 +1,13 @@
+body {
+    padding: 20px;
+    font-family: 'Lato', sans-serif;
+    border-style: double;
+    border-color: rgb(149, 149, 255);
+    border-width: 10px;
+    border-radius: 2em;
+    text-align: center;
+}
+
 h1 {
     font-size: 50px;
     background-color: rgb(149, 149, 255);
@@ -33,16 +43,6 @@ td {
     vertical-align: top;
 }
 
-body {
-    padding: 20px;
-    font-family: 'Lato', sans-serif;
-    border-style: double;
-    border-color: rgb(149, 149, 255);
-    border-width: 10px;
-    border-radius: 2em;
-    text-align: center;
-}
-
 #projects {
     display: none;
 }
@@ -55,6 +55,5 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    /* bring your own prefixes */
     transform: translate(-50%, -50%);  
 }
