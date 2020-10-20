@@ -1,0 +1,47 @@
+button3:click {
+         display:inline-block;
+         padding:0.3em 1.2em;
+         margin:0 0.3em 0.3em 0;
+         border-radius:2em;
+         box-sizing: border-box;
+         text-decoration:none;
+         font-family:'Roboto',sans-serif;
+         font-weight:300;
+         color:#FFFFFF;
+         background-color:#4eb5f1;
+         text-align:center;
+         transition: all 0.2s;
+        }
+        a.button3:hover{
+         background-color:#4095c6;
+        }
+        @media all and (max-width:30em){
+         a.button3{
+          display:block;
+          margin:0.2em auto;
+         }
+        }
+
+        body {
+                
+                font-family: 'Roboto', sans-serif;
+        }
+
+        button {
+                background-color: #FFFF99;
+                text-align: center;
+                box-sizing: content-box;
+                transition: all 0.2s;
+                }
+        
+        a :hover{
+                text-decoration: bold;
+                color: rgb(44, 44, 99);
+        }
+        
+        a :visited{
+                text-decoration: none;
+                color: rgb(63, 48, 116);
+        }
+
+        

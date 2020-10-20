@@ -1,0 +1,58 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h1 {
+    color: #3f4647;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    color: #3f4647;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+    color: #47443f;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+ 
+
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: white;
+    font-size: 17px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: #81b5c2;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+
+    
+
+h6 {
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+img {
+    border-style: double;
+    padding: 5px;
+}
+
+a:hover {
+    color: red;
+    text-align: center;
+}
+
+
+
+

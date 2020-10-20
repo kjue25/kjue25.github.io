@@ -1,0 +1,36 @@
+h1 {
+    color: #fc03be;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+ 
+h2 {
+    color: white;
+    font-family: piazzolla; /* For more fonts, check out: https://fonts.google.com/ */
+    background-color: black;
+}
+ 
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: #6600ff;
+    font-size: 20px;
+}
+body {
+    text-align: center;
+}
+h1 {
+    border-style: double;
+    border-width: 20px;
+    border-color: #03fc8c;
+}
+image {
+    border-style: solid;
+    border-width: 20px;
+    border-color: #00d4e7;
+}
+h1:hover {
+    color: #ceaded;
+    text-align: center;
+}
+
+

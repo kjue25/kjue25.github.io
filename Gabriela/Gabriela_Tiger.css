@@ -1,0 +1,50 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h1 {
+    color: white;
+    font-size: 50px;
+    
+   
+}
+ 
+h2 {
+    color: white;
+    font-family: 'Courier New', Courier, monospace; /* For more fonts, check out: https://fonts.google.com/ */
+
+}
+ 
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: #fafafa;
+    font-size: 12px;
+    
+}
+body {
+    background-color: black;
+    text-align: center;
+   font-family: 'Courier New', Courier, monospace; 
+}
+h4 {
+    color: white;
+ 
+}
+h3 {
+    color: white;
+}
+h6 {
+    color: white;   
+}
+img{
+    border-style: dotted;
+    border-color:grey;
+    border-width: 10;
+    padding: 20;
+}
+a:hover{
+    color:rgb(165, 118, 126);
+}
+html{
+    color:whitesmoke
+}
+a{
+    color: rgba(118, 124, 45, 0.952)
+}

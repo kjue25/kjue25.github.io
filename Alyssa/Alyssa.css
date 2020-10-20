@@ -1,0 +1,48 @@
+h1 {
+    color: #604bc9;
+    font-size: 50px;
+    font-family: sans-serif;
+    text-align: center;
+}
+ 
+h2 {
+    color: #48c2c2;
+    font-family: 'Dancing Script', cursive; /* For more fonts, check out: https://fonts.google.com/ */
+    font-size: 45px;
+    text-align: center;
+}
+ 
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: #0a004d;
+    font-size: 30px;
+    
+    font-family: 'Raleway', sans-serif;
+}
+body {
+    background-color: #d7fae8;
+}
+
+a {
+    font-size: 30px;
+    font-family: 'Raleway';
+}
+
+
+a:hover {
+    color: #0066ff;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: double;
+    border-width: 30px;
+    padding: 20px;
+    border-color: #67007a;
+  }
+
+  img:hover {
+      width: 700;
+  }

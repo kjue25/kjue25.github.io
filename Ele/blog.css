@@ -1,0 +1,47 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h5 {
+    text-align:center;
+    font-family: cursive;
+}
+ 
+h2 {
+    color: rgb(4, 6, 43);
+    font-family: cursive; /* For more fonts, check out: https://fonts.google.com/ */
+    text-align:center;
+    padding-left:10;
+    padding-right:10;
+}
+ 
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: rgb(0, 0, 0);
+    
+}
+
+  h3{
+    font-family: cursive;
+    border-top: dotted;
+    border-color: cadetblue;
+  }
+
+h4{
+    font-family: 'Nothing You Could Do', cursive;
+    font-size:20;
+}
+
+a:hover{
+    text-decoration: none;
+}
+a{
+    color: black
+    text-decoration: underline;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+  }
+  html{
+      background-color:white;
+  }

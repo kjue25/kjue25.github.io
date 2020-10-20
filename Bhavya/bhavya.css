@@ -1,0 +1,75 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h1 {
+    color: rgb(94, 18, 194);
+    font-size: 50px;
+    font-family: sans-serif;
+}
+ 
+h2 {
+    color: rgb(82, 18, 165);
+    font-family: cursive; /* For more fonts, check out: https://fonts.google.com/ */
+   
+}
+ 
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: #890bbb;
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 30px
+    color:rgb(114, 19, 204)
+}
+
+img {
+    border-style: groove;
+    border-color:rgb(143, 0, 172);
+    border-width:7px;
+    padding: 5px;
+}
+
+
+a {
+    text-decoration: underline;
+    color: #f56e6e;
+
+}
+
+a:hover {
+    color: rgb(255, 255, 7);
+
+}
+
+
+h3:hover {
+    color:hotpink;
+    color: rgb(190, 46, 101)
+    border-style:double;
+}
+
+
+h1:hover {
+    color:rgb(5, 197, 187);
+    border-style:double;
+    border-color:rgb(174, 110, 180)
+}
+
+
+
+body {
+    border-style: ridge;
+    border-color:palegreen;
+    padding:20px
+
+
+}
+
+
+
+img:hover {
+    padding:7px;
+    border-style:dotted;
+    border-color:thistle;
+
+}

@@ -1,0 +1,26 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h1 {
+    color: #f5d549;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace; }
+ 
+h2 {
+    color:#bad7c9;
+    font-family: cursive; /* For more fonts, check out: https://fonts.google.com/ */
+   
+}
+ 
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: #a0c3f0;
+    font-size: 30px;
+}
+img {border-style: dotted; 
+    border-width: 8px;
+    border-color: lightblue;
+    padding-top: 11px;}
+
+    h2:hover {Color:#cceda4;}
+
+    body {
+        text-align: center;} 

@@ -1,0 +1,48 @@
+
+img {
+    
+border-style:dotted;
+border-width:15px;
+border-color:olive; 
+padding:15px;
+}
+
+iframe {
+    border-style:dotted;
+    border-width:15px;
+    border-color:olive;
+    padding:15px;
+}
+
+
+
+h6 { font-family:'Courier New', Courier, monospace;
+    color:tan;
+    font-size: medium;
+} 
+
+h4 {color:goldenrod;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:larger;
+    padding:25px;}
+
+    a:hover{ 
+        color: tan;
+        
+    }
+a { 
+    color: black;
+}
+    h1{ 
+    color: black;
+    font-size: larger;
+     
+    }
+
+    h5 {
+        color:tan;
+        font-size: medium;
+        font-family:'Courier New', Courier, monospace;
+        
+    }
+    body { text-align:center;} 

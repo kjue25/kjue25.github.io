@@ -1,0 +1,22 @@
+p {
+    border-style: double;
+    padding: 7px;
+    color: #4259d6;
+    font-size: 12px;
+}
+
+h1 {
+    border-style: dotted;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: #deae3e;
+    font-size: 26px;
+    font-family: sans-serif;
+
+ 
+h2 {
+    color: #8f1e38;
+    font-family: Piazzolla; /* For more fonts, check out: https://fonts.google.com/ */
+    background-color: black;
+}
+ 

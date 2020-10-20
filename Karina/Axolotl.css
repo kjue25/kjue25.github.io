@@ -1,0 +1,55 @@
+h1 {
+    color: black;
+    font-size: 50px;
+    font-family: 'Dancing Script', cursive;
+}
+ 
+h3 {
+    color: black;
+    font-family: 'Dancing Script', cursive;;
+    font-size: 25px;
+}
+ 
+p {
+    color: black;
+    font-family: 'Chilanka', cursive; 
+    font-size: 17px;
+}
+
+p:hover{
+    font-size: 60px;
+}
+
+li:hover{
+    font-size: 60px
+}
+
+a:hover{
+    font-size:60px
+}
+
+li {
+    text-align: left;
+    color:black;
+    font-size: 17px;
+    font-family: 'Chilanka', cursive; 
+}   
+
+h4 {
+    color: black;
+    font-family: 'Chilanka', cursive;
+    font-size: 20px;   
+}
+
+body{
+    background-color:lavender; 
+    text-align:center;
+}
+
+a:hover { 
+color: palevioletred
+}
+
+a:visited {
+color:purple
+}

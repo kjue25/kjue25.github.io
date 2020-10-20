@@ -1,0 +1,19 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h1 {
+    color: #b5919d;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+ 
+h2 {
+    color: white;
+    font-family: cursive; /* For more fonts, check out: https://fonts.google.com/ */
+    background-color: black;
+}
+ 
+li{
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: #1393fc;
+    font-size: 12px;
+}
+div {border-style: dotted;}

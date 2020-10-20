@@ -1,0 +1,27 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h1 {
+    color: rgb(35, 35, 116);
+    font-size: 50px;
+    font-family: sans-serif;
+}
+ 
+h2 {
+    color: rgb(121, 157, 173);
+    font-family: cursive; /* For more fonts, check out: https://fonts.google.com/ */
+    background-color: rgb(253, 196, 196);
+}
+ 
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: #0f0f0f;
+    font-size: 22px;
+}
+img{border-style: groove;
+    border-width: 20px;
+    border-color: #38363b;
+   
+    
+}
+
+a:hover{text-decoration: none;
+    color:red;}

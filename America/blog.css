@@ -1,0 +1,38 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h1 {
+    color: paleturquoise;
+    font-size: 50px;
+    font-family: sans-serif;
+    background-color: black;
+    padding-left: 11px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    scroll-padding-right: 11px;
+    border-style: dotted;
+
+
+}
+h3 {
+    color: peachpuff;
+    font-size: 50px;
+    font-family: sans-serif;
+    background-color: black
+}
+h2{
+    color: palegreen;
+    font-size: 50px;
+    font-family: cursive;
+    background-color: black;
+}
+p {
+    color: palevioletred;
+    font-size: 25px;
+    font-family: cursive;
+    background-color: black;
+}
+body{background-color: black;
+ <img src=“image.jpg”/>
+
+
+
+}

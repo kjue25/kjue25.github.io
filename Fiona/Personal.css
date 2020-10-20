@@ -1,0 +1,41 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h1 {
+    color: turquoise;
+    font-size: 50px;
+    font-family: 'Sacramento', cursive;
+    background-color: white ;
+    border-style: double;
+    border-color: teal;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-width: 5px;
+
+}
+ 
+h2 {
+    color: #979dda;
+    font-family: 'Sacramento', cursive; /* For more fonts, check out: https://fonts.google.com/ */
+    background-color: white;
+}
+ h3 {
+    color: # 2a044a ;
+    font-family: 'Dancing Script', cursive;
+    background-color: white;
+ }
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: #2d7e8c;
+    font-size: 17px;
+    font-family: 'Patrick Hand', cursive;
+}
+body {
+    text-align: center;
+}
+a:hover {
+    color: purple;
+    text-decoration: underline;
+}
+a {
+    color: #2d7e8c;
+    text-decoration: none;
+}

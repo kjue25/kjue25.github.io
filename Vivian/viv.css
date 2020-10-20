@@ -1,0 +1,62 @@
+h1 {
+    color: pink;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+
+}
+ 
+h2 {
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* For more fonts, check out: https://fonts.google.com/ */
+    background-color: teal;
+    text-align: center;
+    
+}
+ 
+
+
+a:visited {
+    text-decoration: none;
+    color: pink;
+
+}
+
+
+ h1 {
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+body{
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+
+a:hover {
+    text-decoration: none;
+    color: lightblue;
+}
+
+img { 
+    width: 500;
+    height: 500;
+     margin-left: auto;
+     margin-right: auto; 
+
+}
+
+
+
+
+
+
+
+
+
+
