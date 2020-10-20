@@ -1,0 +1,32 @@
+h2 {
+    color: lavender;
+    font-size: 50px;
+    font-family: 'Times New Roman';
+}
+ 
+h3 {
+    color: white;
+    font-family: cursive;
+    background-color: lavender;
+    font-size: 30px;
+}
+ 
+p {
+    font-family: Georgia;
+    color: lightslategray;
+    font-size: 15px;
+}
+
+a :hover {
+color: lavender
+}
+
+img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 50%;
+   border-style: double;
+   border-color: lavender;
+   border-width: 15px;
+}

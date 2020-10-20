@@ -1,0 +1,59 @@
+h1 {
+    color: tan;
+    font-size: 50px;
+    font-family: sans-serif;
+    text-align: center;
+    
+}
+
+ #JaguarPic  {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width; 1000 
+  Height; 700;
+}
+
+h2 {
+    color: tan;
+    font-size: 30px;
+    font-family: sans-serif; /* For more fonts, check out: https://fonts.google.com/ */
+    background-color: white;
+}
+
+h3 {
+    text-align: center;
+    font-family: sans-serif;
+}
+ 
+img {
+    border-style: solid;
+    padding: 7px;
+    border-width: 10px;
+    border-color: tan;
+}
+
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: black;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+a:hover {
+    color: tan;
+    text-align: center;
+
+}
+
+a {
+    color: lightblue;
+
+}
+
+ {
+    font-size: 40px;
+    font-family: sans-serif;
+    text-align: center;
+
+}

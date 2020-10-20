@@ -1,0 +1,71 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h1 {
+    color:#fefefe;
+    font-family: Comic Sans MS;
+    text-decoration: underline;
+}
+ 
+h4 {
+    color: white;
+    font-family: Comic Sans MS; /* For more fonts, check out: https://fonts.google.com/ */
+
+
+}
+ 
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color:#fae6fa;
+    font-size: 16px;
+    font-family: Comic Sans MS;
+
+}
+
+
+
+body {
+    background-color: #3d677d;
+    border: 10px solid#b5b1b5;
+    text-align: center;
+    text-indent: 40px;
+    padding: 100px;
+    padding right: 100 px;
+    margin: 80px;
+
+}
+
+h3 {
+    color:#fae6fa;
+    font-size: 25px;
+    text-align: center;
+}
+
+img {
+    filter: brightness (105%);
+    filter: contrast (105%);
+    width: 700px;
+    height: 600px;
+    border: 5px solid#b5b1b5;
+    margin: 10px;
+    border-radius: 20%
+
+
+}
+
+a {
+    color:violet;
+font-family: Comic Sans MS;
+text-decoration: none
+
+}
+
+a:hover {
+    color:greenyellow;
+    text-decoration: underline
+}
+
+img:hover {
+    width: 800px;
+    height: 700px
+
+}
+

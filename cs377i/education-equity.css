@@ -1,0 +1,278 @@
+html, body {
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+body {
+	font-family: "verdana";
+	background-image: url("background.png");
+}
+
+.school-col {
+	background-color: #ffffff;
+	border: 1px solid #eee;
+	text-align:center;
+}
+
+.school-names {
+	padding: 10px;
+}
+
+.schools-table {
+	background-color: #ffffff;
+}
+
+#title{
+  display: none;
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+}
+
+.rounded-custom {
+	border-radius: 20px !important;
+}
+
+#instructions {
+	text-align: center;
+	vertical-align: middle;
+	font-family: "verdana";
+	font-size: 20px;
+}
+
+#value_statements {
+	display: none;
+}
+
+.cell {
+	text-align: center;
+	font-family: "verdana";
+	font-size: 30px;
+	height: 100%;
+	margin: 10px;
+	vertical-align: center;
+}
+
+.speech-bubble-left:hover {
+	 background: #000000;
+	 cursor: pointer;
+}
+
+.speech-bubble-left:hover::after {
+	border-top-color: #000000;
+	cursor: pointer;
+}
+
+.speech-bubble-right:hover {
+	 background: #000000;
+	 cursor: pointer;
+}
+
+.speech-bubble-right:hover::after {
+	border-top-color: #000000;
+	cursor: pointer;
+}
+
+
+.overlay {
+	position: fixed; /* Sit on top of the page content */
+	display: none; /* Hidden by default */
+	width: 100%;
+	height: 100%; /* Full height (cover the whole page) */
+	background-color: #ffffff; /* Black background with opacity */
+	cursor: pointer; /* Add a pointer on hover */
+}
+
+.overlay-parent {
+	position: fixed; /* Sit on top of the page content */
+	display: none; /* Hidden by default */
+	width: 100%;
+	height: 100%; /* Full height (cover the whole page) */
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+}
+
+.custom-btn {
+	display: none;
+	position: relative;
+	background-color: #c06c84;
+	color: white;
+	font-size: 14px;
+	border-radius: 8px;
+	cursor: pointer;
+	padding: 12px 24px;
+	text-align: center;
+}
+.custom-btn:hover {
+	background-color: black;
+}
+
+#intro-wrapper {
+  width: 100%;
+  height: 80px;
+  border: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#wrapper {
+  width: 100%;
+  height: 80px;
+  border: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.speech-bubble-left {
+	position: relative;
+	background: #355c7d;
+	border-radius: .4em;
+	padding: 20px;
+	color: white;
+	width: 100%;
+	top: 30%;
+}
+
+.speech-bubble-left:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 30%;
+	width: 0;
+	height: 0;
+	border: 33px solid transparent;
+	border-top-color: #355c7d;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -16.5px;
+	margin-bottom: -33px;
+}
+
+.speech-bubble-right {
+	position: relative;
+	background: #6c5b7b;
+	border-radius: .4em;
+	padding: 20px;
+	color: white;
+	width: 100%;
+	top: 30%;
+}
+
+.speech-bubble-right:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 70%;
+	width: 0;
+	height: 0;
+	border: 33px solid transparent;
+	border-top-color: #6c5b7b;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -16.5px;
+	margin-bottom: -33px;
+}
+
+#summary {
+    top: 10px;
+    font-size: 14px;
+}
+
+#equity-summary {
+    position: fixed;
+    right: 0px;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 6px;
+    width: 100%;
+    border: 1px solid white;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #B3B5B8;
+		color: #ffffff;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.row-values {
+	min-height:100vh;
+}
+
+.pressed-school-prop {
+    background-color: black ! important;
+}
+
+.generic-school-prop {
+    background-color: #777;
+    color: white;
+}
+
+.value-statement-right {
+    position: relative;
+    background: #6c5b7b;
+    border-radius: .4em;
+    padding: 20px;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.value-statement-right:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 0;
+    height: 0;
+    border: 33px solid transparent;
+    border-top-color: #6c5b7b;
+    border-bottom: 0;
+    border-left: 0;
+    margin-left: -16.5px;
+    margin-bottom: -33px;
+}
+
+#school_name {
+    text-align: center;
+}

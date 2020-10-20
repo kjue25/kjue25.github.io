@@ -1,0 +1,22 @@
+<html> 
+
+<head>
+<link rel="stylesheet" href="blog.css">
+</head>
+h1 {
+    color: blue;
+    font-size: 70px;
+    font-family: sans-serif;
+}
+ 
+h2 {
+    color: rgb(25, 1, 92);
+    font-family: cursive; /* For more fonts, check out: https://fonts.google.com/ */
+    background-color: rgb(255, 188, 188);
+}
+ 
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: #390eb1;
+    font-size: 12px;
+}

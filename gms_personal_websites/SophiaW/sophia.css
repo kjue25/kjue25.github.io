@@ -1,0 +1,45 @@
+
+h1 
+{color: #33b0ae;
+font-family: cursive;
+background-color: none;
+text-align: center;
+}
+
+
+h2 
+{color: #33b0ae;
+font-family: cursive;
+background-color: none; 
+}
+
+
+h3
+{color: #000000;
+font-family: "Courier New";
+background-color: none; 
+}
+
+img {
+display: block;
+margin-left: auto;
+margin-right: auto;
+border-style: dotted;
+border-width: 15px;
+border-color: #3299a8; 
+
+
+}
+
+a:hover{
+color: #3299a8;
+font-family: "Courier New" ;
+background-color: none; 
+  
+}
+
+a 
+{color: #33b0ae;
+font-family: cursive;
+background-color: none; 
+}

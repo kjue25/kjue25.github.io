@@ -1,0 +1,40 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h1 {
+    color: #EB6D4D ue;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+body {
+    text-align: center;
+}
+
+img{
+    border-style: groove;
+    border-width: 9px;
+    border-color: salmon;
+    padding: 9px;
+    margin: 5px;
+
+}
+h2 {
+    color: #EB6D4D ue;
+    font-size: 29px;
+    background-color: salmon
+    font-family: 'Peddana', serif;
+}
+
+a:hover{
+    color: salmon;
+    text-decoration: underline;
+}
+ 
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: #270369;
+    font-size: 23px;
+}
+
+h1 {
+    border-width: 20px;
+    border-color: #000000;
+}

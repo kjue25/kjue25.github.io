@@ -1,0 +1,118 @@
+
+body {background-color: rgb(114, 167, 134)}
+img {border-style: ridge;
+    border-color: whitesmoke;
+    border-width: 7px;
+    border-bottom-color: gray;
+    margin: 10px;
+    width: 500
+   
+           
+        }
+.div2 {background-color:#a1eeca;
+    color: black;
+    text-align: center;
+    margin: 20px;
+    background-color: #a1eeca;
+    border-style: ridge;
+    border-color: whitesmoke;
+    border-width: 7px;
+    border-bottom-color: gray;
+    font-family: 'Trebuchet MS';
+}
+
+          
+h1 {font-style: normal;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 100px;
+    color: honeydew;
+    text-align:center ;
+
+}
+
+h3 {
+    font-family: "Dancing Script";
+    font-size: 50px;
+    color: honeydew;
+    text-align: center;
+}
+h6 {
+    font-family: 'Trebuchet MS';
+    font-size: 15px;
+    color: whitesmoke;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+}
+h2 {
+    font-family: 'Abril Fatface',cursive;
+    float: inline-start;
+    color: honeydew;
+}
+a {
+    color: whitesmoke;
+    text-decoration: wavy;
+    text-decoration: white;
+}
+a:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+a:link {
+   color: teal;
+}
+.div1 {
+    background-color: #a1eeca;
+    border-style: ridge;
+    border-color: whitesmoke;
+    border-width: 7px;
+    border-bottom-color: gray;
+    margin: 20px;
+    
+}
+
+
+
+ 
+.div3 {
+    text-align: center;
+    align-items: center;
+    margin: 20px;
+    color: whitesmoke;
+    
+    
+}
+
+.div4 {
+    
+    text-align: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.div5 {
+    text-decoration: underline;
+
+}
+
+iframe {
+    border-style: ridge;
+    border-color: whitesmoke;
+    border-width: 7px;
+    border-bottom-color: gray;
+}
+
+
+.p1 {
+    color: whitesmoke;
+}
+.p2 {
+    color: rgb(114, 167, 134);
+}
+.div6 {
+    color: whitesmoke;
+    text-align: center;
+}
+.div7 {
+    text-align: center;
+}

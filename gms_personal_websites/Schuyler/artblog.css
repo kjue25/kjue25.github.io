@@ -1,0 +1,43 @@
+
+h1 {
+    color:#bf5836;
+    font-size: 50px;
+    font-family: Times New Roman;
+}
+ 
+h2 {
+    color: white;
+    font-family: cursive; 
+    background-color: black;
+}
+ 
+
+body {
+    background-color: #e8d0c8;
+
+    
+}
+
+a:hover {
+    text-decoration: none;
+    color: #2248ba;
+}
+
+img {
+    border-style: solid;
+    border-width: 7px;
+    border-color: #a13308;
+}
+
+a {
+    text-decoration: none;
+}
+
+a {
+    color: #000000;
+}
+
+img {
+    border-style: solid;
+    padding: 5px;
+}

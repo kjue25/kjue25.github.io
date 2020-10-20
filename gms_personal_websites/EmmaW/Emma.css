@@ -1,0 +1,41 @@
+/* This is a comment! It doesn't affect your code but can be used for descriptions */
+h1 {
+    color: #ffdbdb;
+    font-size: 50px;
+    font-family: 'Tangerine', cursive;
+}
+ 
+h2 {
+    color: white;
+    font-family: cursive; /* For more fonts, check out: https://fonts.google.com/ */
+    background-color:#ffdbdb;
+}
+ 
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color:#969e9e;
+    font-size: 20px;
+    font-family: 'Coming Soon', cursive;
+}
+h3 {
+    color: #ffdbdb;
+    font-family: cursive; /* For more fonts, check out: https://fonts.google.com/ */
+    font-family: 'Coming Soon', cursive;}
+img {
+        border-style: dotted;
+        border-width: 6px;
+        border-color: #a1ffff;
+        border-style: double;
+        margin: 5px;
+    }
+    a:hover{
+        text-decoration: underline;
+        color: #a1ffff;
+    } 
+   
+  
+    
+
+
+
+
