@@ -1,0 +1,46 @@
+/* Ava made this file on October 27th, 2020 */
+/* Ava added the navbar code on November 6th,2020 */
+/* Ava added some design details on November 11th, 2020 */
+h1 {
+    color: #abcef7;
+}
+#navbar {
+    background-color: #c6f7d4;
+    border-style: dotted;
+    border-width: 2px;
+}
+#navbar li {
+    display: inline-block;
+}
+p {
+    font-size: 12px;
+}
+h1 {
+    font-family: lora;
+}
+body {
+    background-color: #c6f7d4;
+}
+body {
+    text-align: center;
+}
+h1 {
+    border-style: dotted;
+    border-width: 20px;
+    border-color: #facae1;
+}
+h1:hover {
+    color: #cab1fa;
+    text-align: center;
+}
+#navbar :hover {
+    color: #91a9ff;
+    text-align: center;
+}
+a:link {
+    text-decoration: underline;
+    color: #ff91ce;
+}
+h1 {
+    text-decoration: underline overline wavy #c7faff;
+}

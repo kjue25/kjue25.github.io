@@ -1,0 +1,26 @@
+/* file created by Sherlyn on 10.27.20 */
+#navbar {
+    background-color: rgb(211, 211, 250);    
+}
+
+#navbar li {
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    
+}
+
+a:hover {
+    color: #93b1e7;
+}
+html{
+    background-color: white;
+    font-family: sans-serif;
+    color: #93b1e7;
+}
+
+a {
+    color: white;
+
+}

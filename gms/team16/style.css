@@ -1,0 +1,33 @@
+/* Created by Matilda on Tuesday, oct. 27, 2020 */
+/* Matilda created nav bar and linking style sheet on Thursday, nov. 5, 2020 */ 
+/*Erin added font and display*/
+/* Erin added font and color and hover to the link*/
+/* erin added width and fixed some bugs and also helped shayne with some code*/
+/*Erin added a better border thing and fixed more bugs*/
+#navbar li{
+    display: inline-block;
+
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+    color:black;
+}
+:hover{
+    color:#74cf80;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color:black;
+    text-align: center;
+    spacing
+    
+}
+
+div {
+    border:solid;
+    border-width:10x;
+    border-color:#74cf80;
+}
+

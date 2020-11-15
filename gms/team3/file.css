@@ -1,0 +1,102 @@
+
+/* Alexa created this file on 0ct 27 2020 */
+/* Claudia edited COGS styling */
+#navbar {
+    background-color:#81b5c7;
+    border: none;
+    
+}
+
+#navbar li {
+display: inline-table;
+}
+
+#navbar a {
+color: white
+
+
+}
+body {
+    text-align: center
+    
+}
+h3{
+    color: #3f4647
+}
+h1 {
+    color: #3f4647 ;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    color: #3f4647;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+    color: #47443f;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+ 
+
+p {
+    /* Search "hex color picker" in Google to pick a color by hex value */
+    color: white;
+    font-size: 17px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: #81b5c2;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+
+    
+
+h6 {
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+img {
+    border-style: double;
+    padding: 5px;
+}
+
+a:hover {
+    color: red;
+    text-align: center;
+}
+
+#navbar {
+padding: 30; 
+
+}
+#leftCOGS {
+    text-align:left;
+   
+}
+#rightCOGS {
+    text-align:left;
+}
+#COGS ul {
+    display:inline-block;
+    list-style-type:none;
+}
+#COGS li {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-style:solid;
+    border-width:3px;
+    Border-color:black;
+    padding:1px;
+}

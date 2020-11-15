@@ -1,0 +1,22 @@
+/* This file was created by hannah on 11/5/20 */
+/* Style was updated by Hannah on 11/5/20 */
+/* Parts were linked by Josie on 11/11/20 */
+/* COG css was updated by Josie on 11/12/20*/
+
+#NavagationBar {
+    background-color: #5db37e;
+    border-style: ridge;
+    border-width: 3px;
+}
+
+#NavagationBar li {
+    display: inline-block;
+}
+
+Body {
+    background-color: #ede3fc;
+}
+
+#COG {
+    list-style-type: none;
+}

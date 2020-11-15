@@ -1,0 +1,20 @@
+/* Sofia added some style to the heading and navbar */
+/* Sofia created this file on 10.27.2020 */
+h1 {
+    background-color:purple;
+    color:pink;
+    text-align: center;
+}
+a:link{
+    text-decoration:  underline plum;
+    font: 400px;
+    
+}
+#navbar li{
+    display: inline-block;
+}
+#navbar{
+    background-color: lightpink;
+    border-style: solid;
+    border-width: 2px;
+}

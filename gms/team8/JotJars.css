@@ -1,0 +1,20 @@
+
+/* Alyssa made this folder on Tues. 10.27 */
+
+/* We all worked on the navbar on 11.5 */
+
+/* Ria worked on this on 11.6 minor formatting changes (color and font)*/
+
+p {
+font-family: sans-serif;
+color: #6E9DC7
+
+
+}
+#navbar {
+    background-color: #9EB7D6;
+}
+
+#navbar li {
+    display: inline-block;
+}

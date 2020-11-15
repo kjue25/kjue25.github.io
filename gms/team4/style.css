@@ -1,0 +1,27 @@
+
+#navbar {
+
+background-color: #9e9fe6; 
+border-style: circles;
+ border-width: 5px;
+ border-color: #e68bb8;
+ font-family: Courier New;
+ font-size: 20px;
+ text-align: center; 
+} 
+#navbar a { color: white; 
+
+}
+#navbar li { display:inline-block; 
+
+}
+h1 {
+    font-family: 'Courier New';
+    border-style: dotted;
+    border-color: #9e9fe6;
+    border-width: 10px;
+}
+
+p { 
+    font-family: 'Courier New';
+}
